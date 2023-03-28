@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.penalara.ghc</groupId>
+    <artifactId>engineGHCFile</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>EngineGHCFile</name>
+    <description>Project with Java POJO classes of full file format to new PeñalaraGHC-Engine.</description>
+	<url>https://github.com/penalara/engineGHCFile</url>
+    <organization>
+        <name>Peñalara Software S.L.</name>
+        <url>https://www.penalara.com</url>
+     </organization>
+	 
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+	 
+	<!-- License for the project -->
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v2.1</name>
+            <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+        </license>
+    </licenses>
+	
+	<!-- Developers on project -->
+	<developers>
+	   	<developer>
+	      <name>David B.</name>
+	      <email>dburgos@penalara.com</email>
+	      <organization>${project.organization.name}</organization>
+	      <organizationUrl>${project.organization.url}</organizationUrl>
+	    </developer>
+		<developer>
+	      <name>Javier A.B.</name>
+	      <email>jabellota@penalara.com</email>
+	      <organization>${project.organization.name}</organization>
+	      <organizationUrl>${project.organization.url}</organizationUrl>
+	    </developer>
+  	</developers>
+
+	<!-- Project Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.11.3</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+        	<!-- Sources -->
+        	<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-source-plugin</artifactId>
+    			<version>3.2.1</version>
+    			<executions>
+     				<execution>
+      					<id>attach-sources</id>
+      					<goals>
+       						<goal>jar-no-fork</goal>
+      					</goals>
+    				</execution>
+    			</executions>
+   			</plugin>
+   			<!-- Javadocs -->
+   			<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-javadoc-plugin</artifactId>
+    			<version>3.2.0</version>
+    			<executions>
+     				<execution>
+      					<id>attach-javadocs</id>
+      					<phase>package</phase>      					
+      					<goals>
+       						<goal>jar</goal>
+      					</goals>
+    				</execution>
+    			</executions>
+   			</plugin>
+            <!-- GnuPG Sign -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.0.1</version>
+  				<executions>
+					<execution>
+						<id>sign-artifacts</id>						
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Sonatype -->
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>     			
+        </plugins>
+    </build>
+	
+	<!-- Source Control Information -->
+	<scm>
+	  <connection>scm:git:ssh://git@github.com/penalara/engineGHCFile.git</connection>
+	  <developerConnection>scm:git:ssh://git@github.com/penalara/engineGHCFile.git</developerConnection>
+	  <url>https://github.com/penalara/engineGHCFile/tree/main</url>
+  	  <tag>HEAD</tag>
+  	</scm>
+  	
+  	
+	<!-- Distribution Information -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+  
+</project>
