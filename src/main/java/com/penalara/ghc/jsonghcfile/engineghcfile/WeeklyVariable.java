@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineinput;
+package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

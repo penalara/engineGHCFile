@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineinput;
+package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,18 +10,19 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * StablePeriods
+ * VariablePeriods
  * <p>
- * The distribution of the class unit of the session is the same in each period.Only one property must be specified.
+ * The total of the class units of the distribution are divided between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "weeklyStable",
     "weeklyVariable",
-    "weeklyCustom"
+    "maximunTimeInPeriod",
+    "minimnunTimeInPeriod"
 })
-public class StablePeriods {
+public class VariablePeriods {
 
     /**
      * WeeklyStable
@@ -42,32 +43,40 @@ public class StablePeriods {
     @JsonPropertyDescription("It defines the distribution as a number of sections per week and a maximum range of sections per day.")
     private WeeklyVariable weeklyVariable;
     /**
-     * WeeklyCustom
-     * <p>
-     * It contains an array of 'WeeklyStable' distributions.
+     * Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
      * 
      */
-    @JsonProperty("weeklyCustom")
-    @JsonPropertyDescription("It contains an array of 'WeeklyStable' distributions.")
-    private List<List<Integer>> weeklyCustom = new ArrayList<List<Integer>>();
+    @JsonProperty("maximunTimeInPeriod")
+    @JsonPropertyDescription("Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.")
+    private Integer maximunTimeInPeriod;
+    /**
+     * Minimum number of minutes to be allocated in each Period.
+     * 
+     */
+    @JsonProperty("minimnunTimeInPeriod")
+    @JsonPropertyDescription("Minimum number of minutes to be allocated in each Period.")
+    private Integer minimnunTimeInPeriod = 0;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public StablePeriods() {
+    public VariablePeriods() {
     }
 
     /**
      * 
-     * @param weeklyCustom
-     *     WeeklyCustom. It contains an array of 'WeeklyStable' distributions.
+     * @param maximunTimeInPeriod
+     *     Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
+     * @param minimnunTimeInPeriod
+     *     Minimum number of minutes to be allocated in each Period.
      */
-    public StablePeriods(List<Integer> weeklyStable, WeeklyVariable weeklyVariable, List<List<Integer>> weeklyCustom) {
+    public VariablePeriods(List<Integer> weeklyStable, WeeklyVariable weeklyVariable, Integer maximunTimeInPeriod, Integer minimnunTimeInPeriod) {
         super();
         this.weeklyStable = weeklyStable;
         this.weeklyVariable = weeklyVariable;
-        this.weeklyCustom = weeklyCustom;
+        this.maximunTimeInPeriod = maximunTimeInPeriod;
+        this.minimnunTimeInPeriod = minimnunTimeInPeriod;
     }
 
     /**
@@ -115,25 +124,39 @@ public class StablePeriods {
     }
 
     /**
-     * WeeklyCustom
-     * <p>
-     * It contains an array of 'WeeklyStable' distributions.
+     * Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
      * 
      */
-    @JsonProperty("weeklyCustom")
-    public List<List<Integer>> getWeeklyCustom() {
-        return weeklyCustom;
+    @JsonProperty("maximunTimeInPeriod")
+    public Integer getMaximunTimeInPeriod() {
+        return maximunTimeInPeriod;
     }
 
     /**
-     * WeeklyCustom
-     * <p>
-     * It contains an array of 'WeeklyStable' distributions.
+     * Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
      * 
      */
-    @JsonProperty("weeklyCustom")
-    public void setWeeklyCustom(List<List<Integer>> weeklyCustom) {
-        this.weeklyCustom = weeklyCustom;
+    @JsonProperty("maximunTimeInPeriod")
+    public void setMaximunTimeInPeriod(Integer maximunTimeInPeriod) {
+        this.maximunTimeInPeriod = maximunTimeInPeriod;
+    }
+
+    /**
+     * Minimum number of minutes to be allocated in each Period.
+     * 
+     */
+    @JsonProperty("minimnunTimeInPeriod")
+    public Integer getMinimnunTimeInPeriod() {
+        return minimnunTimeInPeriod;
+    }
+
+    /**
+     * Minimum number of minutes to be allocated in each Period.
+     * 
+     */
+    @JsonProperty("minimnunTimeInPeriod")
+    public void setMinimnunTimeInPeriod(Integer minimnunTimeInPeriod) {
+        this.minimnunTimeInPeriod = minimnunTimeInPeriod;
     }
 
 }

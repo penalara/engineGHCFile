@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineinput;
+package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineinput;
+package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,27 +8,26 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 /**
- * RestrictionType
+ * ConditionType
  * <p>
- * Indicate whether the incompatibility is a strict, ignore, preferred (strong optimization weight) or accordingToRule (weight according to optimization rule).
+ * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
  * 
  */
-public enum RestrictionType {
+public enum ConditionType {
 
     IGNORE("ignore"),
-    STRICT("strict"),
-    PREFERRED("preferred"),
-    ACCORDING_TO_RULE("accordingToRule");
+    AVOID("avoid"),
+    STRICT("strict");
     private final String value;
-    private final static Map<String, RestrictionType> CONSTANTS = new HashMap<String, RestrictionType>();
+    private final static Map<String, ConditionType> CONSTANTS = new HashMap<String, ConditionType>();
 
     static {
-        for (RestrictionType c: values()) {
+        for (ConditionType c: values()) {
             CONSTANTS.put(c.value, c);
         }
     }
 
-    RestrictionType(String value) {
+    ConditionType(String value) {
         this.value = value;
     }
 
@@ -43,8 +42,8 @@ public enum RestrictionType {
     }
 
     @JsonCreator
-    public static RestrictionType fromValue(String value) {
-        RestrictionType constant = CONSTANTS.get(value);
+    public static ConditionType fromValue(String value) {
+        ConditionType constant = CONSTANTS.get(value);
         if (constant == null) {
             throw new IllegalArgumentException(value);
         } else {

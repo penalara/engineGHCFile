@@ -31,41 +31,41 @@ public class DailyOcupation {
     @JsonPropertyDescription("It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.")
     private Boolean allowFreeDays;
     /**
-     * MinimumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumTeaching")
-    @JsonPropertyDescription("Minimum teaching time of the teacher with students.")
-    private MinimumTeaching minimumTeaching;
+    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionTypeWithTime minimumTeaching;
     /**
-     * MaximumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumTeaching")
-    @JsonPropertyDescription("Minimum teaching time of the teacher with students.")
-    private MaximumTeaching maximumTeaching;
+    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionTypeWithTime maximumTeaching;
     /**
-     * MinimumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumOccupancy")
-    @JsonPropertyDescription("Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.")
-    private MinimumOccupancy minimumOccupancy;
+    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionTypeWithTime minimumOccupancy;
     /**
-     * MaximumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumOccupancy")
-    @JsonPropertyDescription("Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.")
-    private MaximumOccupancy maximumOccupancy;
+    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionTypeWithTime maximumOccupancy;
 
     /**
      * No args constructor for use in serialization
@@ -85,9 +85,9 @@ public class DailyOcupation {
      * @param minimumTeaching
      *     MinimumTeaching. Minimum teaching time of the teacher with students.
      * @param maximumTeaching
-     *     MaximumTeaching. Minimum teaching time of the teacher with students.
+     *     MaximumTeaching. Maximun teaching time of the teacher with students.
      */
-    public DailyOcupation(Boolean allowFreeDays, MinimumTeaching minimumTeaching, MaximumTeaching maximumTeaching, MinimumOccupancy minimumOccupancy, MaximumOccupancy maximumOccupancy) {
+    public DailyOcupation(Boolean allowFreeDays, ConditionTypeWithTime minimumTeaching, ConditionTypeWithTime maximumTeaching, ConditionTypeWithTime minimumOccupancy, ConditionTypeWithTime maximumOccupancy) {
         super();
         this.allowFreeDays = allowFreeDays;
         this.minimumTeaching = minimumTeaching;
@@ -115,90 +115,90 @@ public class DailyOcupation {
     }
 
     /**
-     * MinimumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumTeaching")
-    public MinimumTeaching getMinimumTeaching() {
+    public ConditionTypeWithTime getMinimumTeaching() {
         return minimumTeaching;
     }
 
     /**
-     * MinimumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumTeaching")
-    public void setMinimumTeaching(MinimumTeaching minimumTeaching) {
+    public void setMinimumTeaching(ConditionTypeWithTime minimumTeaching) {
         this.minimumTeaching = minimumTeaching;
     }
 
     /**
-     * MaximumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumTeaching")
-    public MaximumTeaching getMaximumTeaching() {
+    public ConditionTypeWithTime getMaximumTeaching() {
         return maximumTeaching;
     }
 
     /**
-     * MaximumTeaching
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumTeaching")
-    public void setMaximumTeaching(MaximumTeaching maximumTeaching) {
+    public void setMaximumTeaching(ConditionTypeWithTime maximumTeaching) {
         this.maximumTeaching = maximumTeaching;
     }
 
     /**
-     * MinimumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumOccupancy")
-    public MinimumOccupancy getMinimumOccupancy() {
+    public ConditionTypeWithTime getMinimumOccupancy() {
         return minimumOccupancy;
     }
 
     /**
-     * MinimumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("minimumOccupancy")
-    public void setMinimumOccupancy(MinimumOccupancy minimumOccupancy) {
+    public void setMinimumOccupancy(ConditionTypeWithTime minimumOccupancy) {
         this.minimumOccupancy = minimumOccupancy;
     }
 
     /**
-     * MaximumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumOccupancy")
-    public MaximumOccupancy getMaximumOccupancy() {
+    public ConditionTypeWithTime getMaximumOccupancy() {
         return maximumOccupancy;
     }
 
     /**
-     * MaximumOccupancy
+     * ConditionTypeWithTime
      * <p>
-     * Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
+     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("maximumOccupancy")
-    public void setMaximumOccupancy(MaximumOccupancy maximumOccupancy) {
+    public void setMaximumOccupancy(ConditionTypeWithTime maximumOccupancy) {
         this.maximumOccupancy = maximumOccupancy;
     }
 
