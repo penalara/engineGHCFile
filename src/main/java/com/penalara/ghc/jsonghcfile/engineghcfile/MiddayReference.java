@@ -36,26 +36,6 @@ public class MiddayReference {
     private Boolean strict = true;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public MiddayReference() {
-    }
-
-    /**
-     * 
-     * @param refFrame
-     *     Identifier of a frame where the teacher takes noon pause. If not specified, the engine shall take the noon pause of the frame with the highest allocation.
-     * @param strict
-     *     It indicates whether the teacher's noon pause should be respected without placing his or her class units in sections of other frameworks that overlap with his or her noon pause.
-     */
-    public MiddayReference(String refFrame, Boolean strict) {
-        super();
-        this.refFrame = refFrame;
-        this.strict = strict;
-    }
-
-    /**
      * Identifier of a frame where the teacher takes noon pause. If not specified, the engine shall take the noon pause of the frame with the highest allocation.
      * 
      */

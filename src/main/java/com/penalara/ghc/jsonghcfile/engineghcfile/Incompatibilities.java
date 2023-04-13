@@ -114,47 +114,6 @@ public class Incompatibilities {
     private ConditionTypeWithTime freeTimeAroundMidday;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Incompatibilities() {
-    }
-
-    /**
-     * 
-     * @param doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection
-     *     DoNotFinishAtLastMorningSectionIfStartAtFirstAfternoon. Do not finish at the last hour of the morning and start at the first hour of the evening.
-     * @param freeTimeBetweenDayBeforeAndCurrent
-     *     FreeTimeBetweenDays. Minutes between departure and arrival of the following day.
-     * @param doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection
-     *     DoNotFinishAtLastMorningSection. Do not start at the first hour and finish at the last hour of the morning.
-     * @param freeTimeFirstOrLastHoursDay
-     *     FreeTimeFirstOrLastHoursDay. Minutes of free time at first or last hours of the day.
-     * @param doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection
-     *     DoNotFinishAtLastAfternoonSection. o not finish at the last hour of the evening and start at the first.
-     * @param doNotFinishAtLastMorningSectionIfHasAfternoonAssignment
-     *     DoNotFinishAtLastMorningSectionIfHasAfternoon. Do not finish at the last hour in the morning and have the evening busy.
-     * @param freeTimeBetweenEndWeekAndStartWeekDays
-     *     FreeTimeBetweenWeeksBorders. Minutes between the end time of the last day of the week and the start time of the following week.
-     * @param freeTimeAroundMidday
-     *     FreeTimeAroundMidday. Do not have less than a custom free time around noon pause.
-     * @param doNotStartAtFirstMorningSectionIfHasAfternoonAssignment
-     *     DoNotStartAtFirstMorningSection. Do not start at the first hour and keep the evening busy.
-     */
-    public Incompatibilities(ConditionTypeWithTime freeTimeBetweenDayBeforeAndCurrent, ConditionTypeWithTime freeTimeBetweenEndWeekAndStartWeekDays, ConditionTypeWithTime freeTimeFirstOrLastHoursDay, Incompatibilities.DoNotFinishAtLastAfternoonSection doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection, Incompatibilities.DoNotFinishAtLastMorningSection doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection, Incompatibilities.DoNotFinishAtLastMorningSectionIfStartAtFirstAfternoon doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection, Incompatibilities.DoNotFinishAtLastMorningSectionIfHasAfternoon doNotFinishAtLastMorningSectionIfHasAfternoonAssignment, Incompatibilities.DoNotStartAtFirstMorningSection doNotStartAtFirstMorningSectionIfHasAfternoonAssignment, ConditionTypeWithTime freeTimeAroundMidday) {
-        super();
-        this.freeTimeBetweenDayBeforeAndCurrent = freeTimeBetweenDayBeforeAndCurrent;
-        this.freeTimeBetweenEndWeekAndStartWeekDays = freeTimeBetweenEndWeekAndStartWeekDays;
-        this.freeTimeFirstOrLastHoursDay = freeTimeFirstOrLastHoursDay;
-        this.doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection = doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection;
-        this.doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection = doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection;
-        this.doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection = doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection;
-        this.doNotFinishAtLastMorningSectionIfHasAfternoonAssignment = doNotFinishAtLastMorningSectionIfHasAfternoonAssignment;
-        this.doNotStartAtFirstMorningSectionIfHasAfternoonAssignment = doNotStartAtFirstMorningSectionIfHasAfternoonAssignment;
-        this.freeTimeAroundMidday = freeTimeAroundMidday;
-    }
-
-    /**
      * ConditionTypeWithTime
      * <p>
      * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.

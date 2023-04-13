@@ -52,25 +52,6 @@ public class StablePeriods {
     private List<List<Integer>> weeklyCustom = new ArrayList<List<Integer>>();
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public StablePeriods() {
-    }
-
-    /**
-     * 
-     * @param weeklyCustom
-     *     WeeklyCustom. It contains an array of 'WeeklyStable' distributions.
-     */
-    public StablePeriods(List<Integer> weeklyStable, WeeklyVariable weeklyVariable, List<List<Integer>> weeklyCustom) {
-        super();
-        this.weeklyStable = weeklyStable;
-        this.weeklyVariable = weeklyVariable;
-        this.weeklyCustom = weeklyCustom;
-    }
-
-    /**
      * WeeklyStable
      * <p>
      * It contains only one possible weekly distribution. Each value is a assignation day.

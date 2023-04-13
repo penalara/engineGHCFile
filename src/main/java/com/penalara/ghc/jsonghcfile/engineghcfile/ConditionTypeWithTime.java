@@ -1,6 +1,11 @@
 
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -37,24 +42,8 @@ public class ConditionTypeWithTime {
     @JsonProperty("minutes")
     @JsonPropertyDescription("Custom time in minutes for condition.")
     private Integer minutes;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public ConditionTypeWithTime() {
-    }
-
-    /**
-     * 
-     * @param minutes
-     *     Custom time in minutes for condition.
-     */
-    public ConditionTypeWithTime(ConditionType type, Integer minutes) {
-        super();
-        this.type = type;
-        this.minutes = minutes;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * ConditionType
@@ -96,6 +85,16 @@ public class ConditionTypeWithTime {
     @JsonProperty("minutes")
     public void setMinutes(Integer minutes) {
         this.minutes = minutes;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

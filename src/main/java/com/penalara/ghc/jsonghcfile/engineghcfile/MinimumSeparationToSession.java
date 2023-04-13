@@ -42,26 +42,6 @@ public class MinimumSeparationToSession {
     private Integer days;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public MinimumSeparationToSession() {
-    }
-
-    /**
-     * 
-     * @param days
-     *     Days of separation condition. If the value is 0 or 1 it is equivalent to the condition 'DifferentDays'.
-     * @param refSessions
-     *     SessionRefs. List of sessions references.
-     */
-    public MinimumSeparationToSession(List<Integer> refSessions, Integer days) {
-        super();
-        this.refSessions = refSessions;
-        this.days = days;
-    }
-
-    /**
      * SessionRefs
      * <p>
      * List of sessions references.

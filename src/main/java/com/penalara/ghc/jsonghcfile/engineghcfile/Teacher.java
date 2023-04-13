@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -75,36 +80,8 @@ public class Teacher {
     @JsonProperty("periodSettings")
     @JsonPropertyDescription("Strict and measurable teacher's conditions customized by week/period")
     private List<PeriodSetting> periodSettings = new ArrayList<PeriodSetting>();
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Teacher() {
-    }
-
-    /**
-     * 
-     * @param associationIdentifier
-     *     Group or association of teachers who should have similar check-in and check-out times, if possible. This is useful for teachers who share transport.
-     * @param periodSettings
-     *     PeriodsSettings. Strict and measurable teacher's conditions customized by week/period.
-     * @param generalSettings
-     *     GeneralSettings. Strict and measurable teacher's conditions for the timetable. If there are not single periods, these conditions are the default, but can be specified individually for each period in the 'periodSettings' tag.
-     * @param id
-     *     Identifier of the teacher.
-     * @param overlapped
-     *     It indicates if the teacher can have overlapped sessions.
-     */
-    public Teacher(String id, String associationIdentifier, Boolean overlapped, List<SectionPreference> frameTemplate, GeneralSettings generalSettings, List<PeriodSetting> periodSettings) {
-        super();
-        this.id = id;
-        this.associationIdentifier = associationIdentifier;
-        this.overlapped = overlapped;
-        this.frameTemplate = frameTemplate;
-        this.generalSettings = generalSettings;
-        this.periodSettings = periodSettings;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Identifier of the teacher.
@@ -226,6 +203,16 @@ public class Teacher {
     @JsonProperty("periodSettings")
     public void setPeriodSettings(List<PeriodSetting> periodSettings) {
         this.periodSettings = periodSettings;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

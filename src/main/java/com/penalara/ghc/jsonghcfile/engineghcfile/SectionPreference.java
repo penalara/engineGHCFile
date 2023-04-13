@@ -2,8 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -60,32 +64,8 @@ public class SectionPreference {
     @JsonProperty("type")
     @JsonPropertyDescription("Element availability to be assigned to the section.")
     private SectionPreference.SectionPreferenceTypeWithOutPreset type;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public SectionPreference() {
-    }
-
-    /**
-     * 
-     * @param index
-     *     Index inside the day where is located the section.
-     * @param type
-     *     SectionPreferenceTypeWithOutPreset. Element availability to be assigned to the section.
-     * @param day
-     *     Day of the week when is located the section.
-     * @param frame
-     *     Identifier name of the frame.
-     */
-    public SectionPreference(Integer day, Integer index, String frame, SectionPreference.SectionPreferenceTypeWithOutPreset type) {
-        super();
-        this.day = day;
-        this.index = index;
-        this.frame = frame;
-        this.type = type;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Day of the week when is located the section.
@@ -169,6 +149,16 @@ public class SectionPreference {
     @JsonProperty("type")
     public void setType(SectionPreference.SectionPreferenceTypeWithOutPreset type) {
         this.type = type;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 

@@ -52,32 +52,6 @@ public class NonPreferredPositionsOptimization {
     private Integer inSessions = 2;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public NonPreferredPositionsOptimization() {
-    }
-
-    /**
-     * 
-     * @param inGroups
-     *     It indicates the weight to be placed in a non-preferential section of a group.
-     * @param inSessions
-     *     Indicates the weight to be placed in a non-preferential section of a session.
-     * @param inSubjectsAndTask
-     *     It indicates the weight to be placed in a non-preferential section of a subject or a task.
-     * @param inTeachers
-     *     It indicates the weight to be placed in a non-preferential section of a teacher.
-     */
-    public NonPreferredPositionsOptimization(Integer inGroups, Integer inTeachers, Integer inSubjectsAndTask, Integer inSessions) {
-        super();
-        this.inGroups = inGroups;
-        this.inTeachers = inTeachers;
-        this.inSubjectsAndTask = inSubjectsAndTask;
-        this.inSessions = inSessions;
-    }
-
-    /**
      * It indicates the weight to be placed in a non-preferential section of a group.
      * 
      */

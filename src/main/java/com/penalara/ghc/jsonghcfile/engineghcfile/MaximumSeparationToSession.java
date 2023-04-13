@@ -42,26 +42,6 @@ public class MaximumSeparationToSession {
     private Integer days;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public MaximumSeparationToSession() {
-    }
-
-    /**
-     * 
-     * @param days
-     *     Days of separation condition.
-     * @param refSessions
-     *     SessionRefs. List of sessions references.
-     */
-    public MaximumSeparationToSession(List<Integer> refSessions, Integer days) {
-        super();
-        this.refSessions = refSessions;
-        this.days = days;
-    }
-
-    /**
      * SessionRefs
      * <p>
      * List of sessions references.

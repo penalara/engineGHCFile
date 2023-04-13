@@ -36,26 +36,6 @@ public class TimetableGaps {
     private Integer teacherGaps = 2;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public TimetableGaps() {
-    }
-
-    /**
-     * 
-     * @param groupGaps
-     *     It indicates the weight given to the fact of leaving gaps in groups' timetables.
-     * @param teacherGaps
-     *     It indicates the weight given to the fact of leaving gaps in teachers' timetables.
-     */
-    public TimetableGaps(Integer groupGaps, Integer teacherGaps) {
-        super();
-        this.groupGaps = groupGaps;
-        this.teacherGaps = teacherGaps;
-    }
-
-    /**
      * It indicates the weight given to the fact of leaving gaps in groups' timetables.
      * 
      */

@@ -52,29 +52,6 @@ public class Distribution {
     private VariablePeriods variablePeriods;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Distribution() {
-    }
-
-    /**
-     * 
-     * @param variablePeriods
-     *     VariablePeriods. The total of the class units of the distribution are divided between the periods.
-     * @param periods
-     *     RefPeriods. List of periods or weeks in which the class unit must be assigned.
-     * @param stablePeriods
-     *     StablePeriods. The distribution of the class unit of the session is the same in each period.
-     */
-    public Distribution(List<String> periods, StablePeriods stablePeriods, VariablePeriods variablePeriods) {
-        super();
-        this.periods = periods;
-        this.stablePeriods = stablePeriods;
-        this.variablePeriods = variablePeriods;
-    }
-
-    /**
      * RefPeriods
      * <p>
      * List of periods or weeks in which the class unit must be assigned.

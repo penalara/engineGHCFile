@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -40,26 +45,8 @@ public class Frame {
     @JsonProperty("days")
     @JsonPropertyDescription("List of the days in the frame")
     private List<FrameDay> days = new ArrayList<FrameDay>();
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Frame() {
-    }
-
-    /**
-     * 
-     * @param days
-     *     Days. List of the days in the frame.
-     * @param id
-     *     Frame identifier.
-     */
-    public Frame(String id, List<FrameDay> days) {
-        super();
-        this.id = id;
-        this.days = days;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Frame identifier.
@@ -103,6 +90,16 @@ public class Frame {
     @JsonProperty("days")
     public void setDays(List<FrameDay> days) {
         this.days = days;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

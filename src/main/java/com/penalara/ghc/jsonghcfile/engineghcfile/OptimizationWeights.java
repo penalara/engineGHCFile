@@ -60,32 +60,6 @@ public class OptimizationWeights {
     private TeachersOptimization teachers;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public OptimizationWeights() {
-    }
-
-    /**
-     * 
-     * @param sessions
-     *     SessionsOptimization. It contains options related to optimisable conditions for sessions.
-     * @param nonPreferredPositions
-     *     NonPreferredPositionsOptimization. It contains options related to allocation in non-preferred sections.
-     * @param timetableGaps
-     *     TimetableGaps. It contains options related to timetable-gaps weights.
-     * @param teachers
-     *     TeachersOptimization. It contains options related to optimisable conditions for teachers.
-     */
-    public OptimizationWeights(TimetableGaps timetableGaps, NonPreferredPositionsOptimization nonPreferredPositions, SessionsOptimization sessions, TeachersOptimization teachers) {
-        super();
-        this.timetableGaps = timetableGaps;
-        this.nonPreferredPositions = nonPreferredPositions;
-        this.sessions = sessions;
-        this.teachers = teachers;
-    }
-
-    /**
      * TimetableGaps
      * <p>
      * It contains options related to timetable-gaps weights.

@@ -44,29 +44,6 @@ public class WeeklyStay {
     private Boolean countAroundMidday = true;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeeklyStay() {
-    }
-
-    /**
-     * 
-     * @param preferable
-     *     Ponderable Time in minutes of maximum weeekly stay.
-     * @param countAroundMidday
-     *     It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day.
-     * @param strict
-     *     Strict time in minutes of maximum weekly stay.
-     */
-    public WeeklyStay(Integer strict, Integer preferable, Boolean countAroundMidday) {
-        super();
-        this.strict = strict;
-        this.preferable = preferable;
-        this.countAroundMidday = countAroundMidday;
-    }
-
-    /**
      * Strict time in minutes of maximum weekly stay.
      * 
      */

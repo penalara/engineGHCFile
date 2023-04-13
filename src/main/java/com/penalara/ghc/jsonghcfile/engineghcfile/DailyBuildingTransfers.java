@@ -36,26 +36,6 @@ public class DailyBuildingTransfers {
     private Integer preferable;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public DailyBuildingTransfers() {
-    }
-
-    /**
-     * 
-     * @param preferable
-     *     Maximum number of movements per day that can be weighted/preferred.
-     * @param strict
-     *     Strict maximum number of movements per day.
-     */
-    public DailyBuildingTransfers(Integer strict, Integer preferable) {
-        super();
-        this.strict = strict;
-        this.preferable = preferable;
-    }
-
-    /**
      * Strict maximum number of movements per day.
      * 
      */

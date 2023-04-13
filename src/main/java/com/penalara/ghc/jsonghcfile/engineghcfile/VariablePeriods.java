@@ -58,28 +58,6 @@ public class VariablePeriods {
     private Integer minimnunTimeInPeriod = 0;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public VariablePeriods() {
-    }
-
-    /**
-     * 
-     * @param maximunTimeInPeriod
-     *     Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
-     * @param minimnunTimeInPeriod
-     *     Minimum number of minutes to be allocated in each Period.
-     */
-    public VariablePeriods(List<Integer> weeklyStable, WeeklyVariable weeklyVariable, Integer maximunTimeInPeriod, Integer minimnunTimeInPeriod) {
-        super();
-        this.weeklyStable = weeklyStable;
-        this.weeklyVariable = weeklyVariable;
-        this.maximunTimeInPeriod = maximunTimeInPeriod;
-        this.minimnunTimeInPeriod = minimnunTimeInPeriod;
-    }
-
-    /**
      * WeeklyStable
      * <p>
      * It contains only one possible weekly distribution. Each value is a assignation day.

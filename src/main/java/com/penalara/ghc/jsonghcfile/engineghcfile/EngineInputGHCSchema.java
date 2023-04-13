@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -170,65 +175,8 @@ public class EngineInputGHCSchema {
     @JsonProperty("engineSettings")
     @JsonPropertyDescription("Customised engine configuration parameters.")
     private EngineSettings engineSettings;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public EngineInputGHCSchema() {
-    }
-
-    /**
-     * 
-     * @param classRoomsSets
-     *     ClassRoomsSets. A division of the classrooms, grouped by organizational characteristics or needs.
-     * @param sessions
-     *     Sessions. Definition of the teacher class units. These may be with groups of students, meetings with other teachers or complementary activities.
-     * @param frames
-     *     Frames. Tables of the timetable that contain sections where the class units are located.
-     * @param subjects
-     *     Subjects. School subjects taught in the class units.
-     * @param groups
-     *     Groups. Sets of students.
-     * @param optimizationWeights
-     *     OptimizationWeights. This indicates the weights that the weighting options will have for the engine optimisation process. The engine shall apply default values for elements that have not been specified.
-     * @param teachers
-     *     Teachers. Teachers list of the timetable.
-     * @param buildings
-     *     Buildings. It contains the school or educational institution buildings.
-     * @param periods
-     *     Periods. Weeks or periods with different assignments which contains the timetable.
-     * @param classRooms
-     *     ClassRooms. It contains the classrooms to organize the class units.
-     * @param meetings
-     *     Meetings. List of meetings between teachers defined in the timetable.
-     * @param complementaryActivities
-     *     ComplementaryActivities. List of complementary activities of the teachers.
-     * @param engineSettings
-     *     EngineSettings. Customised engine configuration parameters.
-     * @param onCallServices
-     *     OnCallServices. List of on-call services of teachers defined in the timetable.
-     * @param tasks
-     *     Tasks. Types of tasks or activities for the teachers.
-     */
-    public EngineInputGHCSchema(Periods periods, List<Frame> frames, List<Building> buildings, List<Classroom> classRooms, List<ClassRoomSet> classRoomsSets, List<Task> tasks, List<Teacher> teachers, List<Subject> subjects, List<Group> groups, List<Session> sessions, List<Meeting> meetings, List<Complementary> complementaryActivities, List<OnCallService> onCallServices, OptimizationWeights optimizationWeights, EngineSettings engineSettings) {
-        super();
-        this.periods = periods;
-        this.frames = frames;
-        this.buildings = buildings;
-        this.classRooms = classRooms;
-        this.classRoomsSets = classRoomsSets;
-        this.tasks = tasks;
-        this.teachers = teachers;
-        this.subjects = subjects;
-        this.groups = groups;
-        this.sessions = sessions;
-        this.meetings = meetings;
-        this.complementaryActivities = complementaryActivities;
-        this.onCallServices = onCallServices;
-        this.optimizationWeights = optimizationWeights;
-        this.engineSettings = engineSettings;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Periods
@@ -558,6 +506,16 @@ public class EngineInputGHCSchema {
     @JsonProperty("engineSettings")
     public void setEngineSettings(EngineSettings engineSettings) {
         this.engineSettings = engineSettings;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

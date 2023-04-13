@@ -46,27 +46,6 @@ public class MaxContinuousTeaching {
     private Integer minBreak;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public MaxContinuousTeaching() {
-    }
-
-    /**
-     * 
-     * @param minutes
-     *     Maximum continuous teaching time in minutes.
-     * @param minBreak
-     *     Minimum time period to be considered as break time.
-     */
-    public MaxContinuousTeaching(ConditionType type, Integer minutes, Integer minBreak) {
-        super();
-        this.type = type;
-        this.minutes = minutes;
-        this.minBreak = minBreak;
-    }
-
-    /**
      * ConditionType
      * <p>
      * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.

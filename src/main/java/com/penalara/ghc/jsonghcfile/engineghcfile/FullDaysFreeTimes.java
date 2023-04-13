@@ -1,6 +1,11 @@
 
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -34,26 +39,8 @@ public class FullDaysFreeTimes {
     @JsonProperty("preferredDays")
     @JsonPropertyDescription("Number of preferred days when teacher should be free.")
     private Integer preferredDays = 0;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public FullDaysFreeTimes() {
-    }
-
-    /**
-     * 
-     * @param strictDays
-     *     Number of strict days when teacher should be free.
-     * @param preferredDays
-     *     Number of preferred days when teacher should be free.
-     */
-    public FullDaysFreeTimes(Integer strictDays, Integer preferredDays) {
-        super();
-        this.strictDays = strictDays;
-        this.preferredDays = preferredDays;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Number of strict days when teacher should be free.
@@ -89,6 +76,16 @@ public class FullDaysFreeTimes {
     @JsonProperty("preferredDays")
     public void setPreferredDays(Integer preferredDays) {
         this.preferredDays = preferredDays;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

@@ -117,46 +117,6 @@ public class OnCallService {
     private NonClassSessionSettings settings;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public OnCallService() {
-    }
-
-    /**
-     * 
-     * @param refPeriods
-     *     RefPeriods. List of Periods when the service must be set.
-     * @param inBreak
-     *     It indicates whether it is a break supervision.
-     * @param teachersEachSection
-     *     TeachersEachSection. Information about number of teacher in all sections.
-     * @param refFrame
-     *     Identifier of the frame where the service will be set.
-     * @param refTeachers
-     *     RefTeachersOnCall. List of teachers who in the service.
-     * @param id
-     *     On-Call service identifier.
-     * @param refTask
-     *     Task identifier.
-     * @param refBuilding
-     *     Identifier of the building where the service is located. It is used to know the transfer time and the number of transfers between buildings for teachers.
-     */
-    public OnCallService(String id, String refFrame, List<String> refPeriods, String refTask, Boolean inBreak, TeachersEachSection teachersEachSection, List<RefTeacher> refTeachers, List<OnCallSectionPreference> frameTemplate, String refBuilding, NonClassSessionSettings settings) {
-        super();
-        this.id = id;
-        this.refFrame = refFrame;
-        this.refPeriods = refPeriods;
-        this.refTask = refTask;
-        this.inBreak = inBreak;
-        this.teachersEachSection = teachersEachSection;
-        this.refTeachers = refTeachers;
-        this.frameTemplate = frameTemplate;
-        this.refBuilding = refBuilding;
-        this.settings = settings;
-    }
-
-    /**
      * On-Call service identifier.This identifier can not be equals to any session identifier.
      * (Required)
      * 

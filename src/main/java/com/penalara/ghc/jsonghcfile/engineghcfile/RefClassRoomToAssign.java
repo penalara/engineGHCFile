@@ -42,26 +42,6 @@ public class RefClassRoomToAssign {
     private List<String> classRoomsSetsList = new ArrayList<String>();
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public RefClassRoomToAssign() {
-    }
-
-    /**
-     * 
-     * @param classRoomsSetsList
-     *     ClassRoomsSetsList. Classroom set list where one classroom could be taken to assign to session.
-     * @param classRoom
-     *     ClassRoomRef. Classroom identifier.
-     */
-    public RefClassRoomToAssign(String classRoom, List<String> classRoomsSetsList) {
-        super();
-        this.classRoom = classRoom;
-        this.classRoomsSetsList = classRoomsSetsList;
-    }
-
-    /**
      * ClassRoomRef
      * <p>
      * Classroom identifier.

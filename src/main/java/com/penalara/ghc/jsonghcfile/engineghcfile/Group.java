@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -80,39 +85,8 @@ public class Group {
     @JsonProperty("gapsAlwaysInNonPreferred")
     @JsonPropertyDescription("This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.")
     private Boolean gapsAlwaysInNonPreferred;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Group() {
-    }
-
-    /**
-     * 
-     * @param refFrame
-     *     Group's frame identifier.
-     * @param gapsAlwaysInNonPreferred
-     *     This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.
-     * @param freeAfternoons
-     *     Stric number of free afternoons for the group.
-     * @param numStudents
-     *     Number of students in the group.
-     * @param id
-     *     Group identifier.
-     * @param notGaps
-     *     It indicates if the group can have gaps in its timetable.
-     */
-    public Group(String id, String refFrame, List<SectionPreference> frameTemplate, Integer numStudents, Integer freeAfternoons, Boolean notGaps, Boolean gapsAlwaysInNonPreferred) {
-        super();
-        this.id = id;
-        this.refFrame = refFrame;
-        this.frameTemplate = frameTemplate;
-        this.numStudents = numStudents;
-        this.freeAfternoons = freeAfternoons;
-        this.notGaps = notGaps;
-        this.gapsAlwaysInNonPreferred = gapsAlwaysInNonPreferred;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Group identifier.
@@ -246,6 +220,16 @@ public class Group {
     @JsonProperty("gapsAlwaysInNonPreferred")
     public void setGapsAlwaysInNonPreferred(Boolean gapsAlwaysInNonPreferred) {
         this.gapsAlwaysInNonPreferred = gapsAlwaysInNonPreferred;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

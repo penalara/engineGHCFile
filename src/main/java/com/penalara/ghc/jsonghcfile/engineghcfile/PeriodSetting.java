@@ -135,34 +135,6 @@ public class PeriodSetting {
     private DailyBuildingTransfers dailyBuildingTransfers;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public PeriodSetting() {
-    }
-
-    /**
-     * 
-     * @param refPeriod
-     *     Identifier of the period to which the settings affect.
-     */
-    public PeriodSetting(String refPeriod, WeeklyStay weeklyStay, DailyStay dailyStay, Boolean avoidGapsBetweenSesions, MaxContinuousTeaching maxContinuousTeaching, Boolean avoidClassesAroundBreak, FreeTimes freeTimes, FreePartTime freePartTimes, Incompatibilities incompatibilities, DailyOcupation dailyOcupation, MiddayReference middayReference, DailyBuildingTransfers dailyBuildingTransfers) {
-        super();
-        this.refPeriod = refPeriod;
-        this.weeklyStay = weeklyStay;
-        this.dailyStay = dailyStay;
-        this.avoidGapsBetweenSesions = avoidGapsBetweenSesions;
-        this.maxContinuousTeaching = maxContinuousTeaching;
-        this.avoidClassesAroundBreak = avoidClassesAroundBreak;
-        this.freeTimes = freeTimes;
-        this.freePartTimes = freePartTimes;
-        this.incompatibilities = incompatibilities;
-        this.dailyOcupation = dailyOcupation;
-        this.middayReference = middayReference;
-        this.dailyBuildingTransfers = dailyBuildingTransfers;
-    }
-
-    /**
      * Identifier of the period to which the settings affect.
      * (Required)
      * 

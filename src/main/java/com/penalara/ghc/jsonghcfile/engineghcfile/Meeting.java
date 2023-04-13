@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -109,39 +114,8 @@ public class Meeting {
     @JsonProperty("settings")
     @JsonPropertyDescription("Settings of the meeting.")
     private NonClassSessionSettings settings;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Meeting() {
-    }
-
-    /**
-     * 
-     * @param refFrame
-     *     Session's frame identifier.
-     * @param refTeachers
-     *     RefTeachers. List of teachers who in the service.
-     * @param id
-     *     Session identifier.
-     * @param refTask
-     *     RefTask. Task identifier.
-     * @param refBuilding
-     *     Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.
-     */
-    public Meeting(String id, String refFrame, String refTask, List<String> refTeachers, Distribution distribution, List<SessionSectionPreference> frameTemplate, RefClassRoomToAssign refClassRoomToAssign, String refBuilding, NonClassSessionSettings settings) {
-        super();
-        this.id = id;
-        this.refFrame = refFrame;
-        this.refTask = refTask;
-        this.refTeachers = refTeachers;
-        this.distribution = distribution;
-        this.frameTemplate = frameTemplate;
-        this.refClassRoomToAssign = refClassRoomToAssign;
-        this.refBuilding = refBuilding;
-        this.settings = settings;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Session identifier.
@@ -337,6 +311,16 @@ public class Meeting {
     @JsonProperty("settings")
     public void setSettings(NonClassSessionSettings settings) {
         this.settings = settings;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

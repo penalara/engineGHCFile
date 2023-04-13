@@ -50,29 +50,6 @@ public class FreePartTime {
     private IndistinctlyFreePartTimes indistinctly;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public FreePartTime() {
-    }
-
-    /**
-     * 
-     * @param mornings
-     *     MorningsFreePartTimes. Mornings off.
-     * @param afternoons
-     *     AfternoonFreePartTimes. Afternoons off.
-     * @param indistinctly
-     *     IndistinctlyFreePartTimes. Free mornings or evenings indistinctly.
-     */
-    public FreePartTime(MorningsFreePartTimes mornings, AfternoonFreePartTimes afternoons, IndistinctlyFreePartTimes indistinctly) {
-        super();
-        this.mornings = mornings;
-        this.afternoons = afternoons;
-        this.indistinctly = indistinctly;
-    }
-
-    /**
      * MorningsFreePartTimes
      * <p>
      * Mornings off.

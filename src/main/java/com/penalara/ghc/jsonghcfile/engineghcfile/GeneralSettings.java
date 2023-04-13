@@ -126,28 +126,6 @@ public class GeneralSettings {
     private DailyBuildingTransfers dailyBuildingTransfers;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public GeneralSettings() {
-    }
-
-    public GeneralSettings(WeeklyStay weeklyStay, DailyStay dailyStay, Boolean avoidGapsBetweenSesions, MaxContinuousTeaching maxContinuousTeaching, Boolean avoidClassesAroundBreak, FreeTimes freeTimes, FreePartTime freePartTimes, Incompatibilities incompatibilities, DailyOcupation dailyOcupation, MiddayReference middayReference, DailyBuildingTransfers dailyBuildingTransfers) {
-        super();
-        this.weeklyStay = weeklyStay;
-        this.dailyStay = dailyStay;
-        this.avoidGapsBetweenSesions = avoidGapsBetweenSesions;
-        this.maxContinuousTeaching = maxContinuousTeaching;
-        this.avoidClassesAroundBreak = avoidClassesAroundBreak;
-        this.freeTimes = freeTimes;
-        this.freePartTimes = freePartTimes;
-        this.incompatibilities = incompatibilities;
-        this.dailyOcupation = dailyOcupation;
-        this.middayReference = middayReference;
-        this.dailyBuildingTransfers = dailyBuildingTransfers;
-    }
-
-    /**
      * WeeklyStay
      * <p>
      * It indicates the maximum preferential and strict teacher's stay, for the weekly stay that the teacher can be in the academic institution.

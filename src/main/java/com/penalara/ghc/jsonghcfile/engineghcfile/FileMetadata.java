@@ -101,41 +101,6 @@ public class FileMetadata {
     private Boolean fullMode = false;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public FileMetadata() {
-    }
-
-    /**
-     * 
-     * @param fullMode
-     *     FullPlannerMode. Indicates if the planner must use the full mode.
-     * @param createdDate
-     *     JsonCreatedDate. Json generation date.
-     * @param lastModifiedDate
-     *     JsonGenerationDate. Json last modification date.
-     * @param name
-     *     TimetableName. Name of the Timetable.
-     * @param refUser
-     *     UserReference. Contains a user reference who owns the file.
-     * @param source
-     *     SourceModule. Indicates the GHCMultiplatform module that generated the file.
-     * @param versionJson
-     *     SchemaVersion. Version of multiplatformGHCSchema used.
-     */
-    public FileMetadata(String name, String versionJson, Date createdDate, Date lastModifiedDate, String refUser, FileMetadata.SourceModule source, Boolean fullMode) {
-        super();
-        this.name = name;
-        this.versionJson = versionJson;
-        this.createdDate = createdDate;
-        this.lastModifiedDate = lastModifiedDate;
-        this.refUser = refUser;
-        this.source = source;
-        this.fullMode = fullMode;
-    }
-
-    /**
      * TimetableName
      * <p>
      * Name of the Timetable

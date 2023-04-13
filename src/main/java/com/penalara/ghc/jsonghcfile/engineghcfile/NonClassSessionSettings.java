@@ -38,24 +38,6 @@ public class NonClassSessionSettings {
     private SamePositionEveryPeriod samePositionEveryPeriod = SamePositionEveryPeriod.fromValue("ignore");
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public NonClassSessionSettings() {
-    }
-
-    /**
-     * 
-     * @param computeForMaxMinOccupancy
-     *      It indicates whether the class unit counts for the maximum and minimum daily teacher occupancy. By default, the engine computes class units with students.
-     */
-    public NonClassSessionSettings(Boolean computeForMaxMinOccupancy, SamePositionEveryPeriod samePositionEveryPeriod) {
-        super();
-        this.computeForMaxMinOccupancy = computeForMaxMinOccupancy;
-        this.samePositionEveryPeriod = samePositionEveryPeriod;
-    }
-
-    /**
      *  It indicates whether the class unit counts for the maximum and minimum daily teacher occupancy. By default, the engine computes class units with students.
      * 
      */

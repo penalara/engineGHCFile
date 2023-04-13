@@ -36,26 +36,6 @@ public class EngineSettings {
     private Boolean countGapsAroundMidday = true;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public EngineSettings() {
-    }
-
-    /**
-     * 
-     * @param teacherBalance
-     *     It indicates whether the optimiser should balance the timetables of different teachers, to avoid very bad timetables for a particular teacher.
-     * @param countGapsAroundMidday
-     *     It indicates, in the case of a split day (with a noon pause), that the unoccupied intervals between the morning and afternoon class units should be counted. This option affects the weighting in the teacher's optimisation of the gaps in their timetable.
-     */
-    public EngineSettings(Boolean teacherBalance, Boolean countGapsAroundMidday) {
-        super();
-        this.teacherBalance = teacherBalance;
-        this.countGapsAroundMidday = countGapsAroundMidday;
-    }
-
-    /**
      * It indicates whether the optimiser should balance the timetables of different teachers, to avoid very bad timetables for a particular teacher.
      * 
      */

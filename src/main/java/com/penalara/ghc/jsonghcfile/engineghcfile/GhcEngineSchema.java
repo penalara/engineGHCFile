@@ -64,30 +64,6 @@ public class GhcEngineSchema {
     private List<EngineOutputGHCSchema> results = new ArrayList<EngineOutputGHCSchema>();
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public GhcEngineSchema() {
-    }
-
-    /**
-     * 
-     * @param meta
-     *     FileMetadata. Information about the file.
-     * @param id
-     *     IdFile. Indicates the id number of the file at the Penalara Server.
-     * @param results
-     *     EngineResults. Tables of the timetable that contain sections where the class units are located.
-     */
-    public GhcEngineSchema(Integer id, FileMetadata meta, EngineInputGHCSchema specifications, List<EngineOutputGHCSchema> results) {
-        super();
-        this.id = id;
-        this.meta = meta;
-        this.specifications = specifications;
-        this.results = results;
-    }
-
-    /**
      * IdFile
      * <p>
      * Indicates the id number of the file at the Penalara Server.

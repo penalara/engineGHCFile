@@ -62,32 +62,6 @@ public class ConsecutiveGroup {
     private Boolean allowBreakBetweenSessions = false;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public ConsecutiveGroup() {
-    }
-
-    /**
-     * 
-     * @param allowBreakBetweenSessions
-     *     Indicates if break between sessions is allowed to keep the relation.
-     * @param id
-     *     Continuous sessions group identifier.
-     * @param refSessions
-     *     SessionRefs. List of the consecutive sessions. Must contain the sesion itself and the proper order of continuity (see 'order' property).
-     * @param order
-     *     Indicates if the sessions must be 'ordered', 'unordered' or 'sameDay'  (it does not matter as long as they are allocated on the same day).
-     */
-    public ConsecutiveGroup(Integer id, List<Integer> refSessions, ConsecutiveGroup.Order order, Boolean allowBreakBetweenSessions) {
-        super();
-        this.id = id;
-        this.refSessions = refSessions;
-        this.order = order;
-        this.allowBreakBetweenSessions = allowBreakBetweenSessions;
-    }
-
-    /**
      * Continuous sessions group identifier.
      * (Required)
      * 

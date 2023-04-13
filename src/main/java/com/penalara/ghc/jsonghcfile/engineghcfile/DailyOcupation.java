@@ -68,35 +68,6 @@ public class DailyOcupation {
     private ConditionTypeWithTime maximumOccupancy;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public DailyOcupation() {
-    }
-
-    /**
-     * 
-     * @param allowFreeDays
-     *     It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.
-     * @param minimumOccupancy
-     *     MinimumOccupancy. Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
-     * @param maximumOccupancy
-     *     MaximumOccupancy. Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
-     * @param minimumTeaching
-     *     MinimumTeaching. Minimum teaching time of the teacher with students.
-     * @param maximumTeaching
-     *     MaximumTeaching. Maximun teaching time of the teacher with students.
-     */
-    public DailyOcupation(Boolean allowFreeDays, ConditionTypeWithTime minimumTeaching, ConditionTypeWithTime maximumTeaching, ConditionTypeWithTime minimumOccupancy, ConditionTypeWithTime maximumOccupancy) {
-        super();
-        this.allowFreeDays = allowFreeDays;
-        this.minimumTeaching = minimumTeaching;
-        this.maximumTeaching = maximumTeaching;
-        this.minimumOccupancy = minimumOccupancy;
-        this.maximumOccupancy = maximumOccupancy;
-    }
-
-    /**
      * It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.
      * 
      */

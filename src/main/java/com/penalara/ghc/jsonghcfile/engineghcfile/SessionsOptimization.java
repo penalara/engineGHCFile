@@ -76,41 +76,6 @@ public class SessionsOptimization {
     private Integer classRoomsChanges = 3;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public SessionsOptimization() {
-    }
-
-    /**
-     * 
-     * @param classRoomsChanges
-     *     It indicates the weight of all class units of each subject not taught in the same classroom, and also to avoid classroom changes of groups. This means a change of classrooms of a group only between consecutive intervals, not those divided by a break.
-     * @param bordersTimetable
-     *     It indicates the weight of the class units assigned at the ends of the timetable.
-     * @param afternoonOrAfterBreakClasses
-     *     It indicates the weight of the penalty of having class units after the last break or in the afternoon.
-     * @param nonPreferredClassRoom
-     *     It indicates the weight if the class units are configured with a preferred classroom and with a set of alternative classrooms, the weight placed in one of the alternative classrooms will be penalised.
-     * @param consecutiveDays
-     *     It indicates the weight of the condition that has been set in each case on the properties of each class unit to place two or three class units, that is, all of them on consecutive days.
-     * @param samePositionEveryPeriod
-     *     It indicates the weight of placing the entities of a class unit belonging to several periods in the same positions or not (also affects on-call services).
-     * @param sameHourSessionClasses
-     *     It indicates the weight of the penalty for not complying with the preference allocation on consecutive days.
-     */
-    public SessionsOptimization(Integer nonPreferredClassRoom, Integer samePositionEveryPeriod, Integer consecutiveDays, Integer bordersTimetable, Integer afternoonOrAfterBreakClasses, Integer sameHourSessionClasses, Integer classRoomsChanges) {
-        super();
-        this.nonPreferredClassRoom = nonPreferredClassRoom;
-        this.samePositionEveryPeriod = samePositionEveryPeriod;
-        this.consecutiveDays = consecutiveDays;
-        this.bordersTimetable = bordersTimetable;
-        this.afternoonOrAfterBreakClasses = afternoonOrAfterBreakClasses;
-        this.sameHourSessionClasses = sameHourSessionClasses;
-        this.classRoomsChanges = classRoomsChanges;
-    }
-
-    /**
      * It indicates the weight if the class units are configured with a preferred classroom and with a set of alternative classrooms, the weight placed in one of the alternative classrooms will be penalised.
      * 
      */

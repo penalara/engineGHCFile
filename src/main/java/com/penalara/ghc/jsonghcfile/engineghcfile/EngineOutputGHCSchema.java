@@ -2,6 +2,11 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -51,29 +56,8 @@ public class EngineOutputGHCSchema {
     @JsonProperty("timetable")
     @JsonPropertyDescription("Object with timetable specification resolved.")
     private GeneratedJsonTimetable timetable;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public EngineOutputGHCSchema() {
-    }
-
-    /**
-     * 
-     * @param date
-     *     JsonGenerationDate. Date of result creation.
-     * @param weight
-     *     ResultWeight. Weight of the result according to the non-mandatory conditions not fulfilled.
-     * @param timetable
-     *     GeneratedJsonTimetable. Object with timetable specification resolved.
-     */
-    public EngineOutputGHCSchema(Date date, Integer weight, GeneratedJsonTimetable timetable) {
-        super();
-        this.date = date;
-        this.weight = weight;
-        this.timetable = timetable;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * JsonGenerationDate
@@ -143,6 +127,16 @@ public class EngineOutputGHCSchema {
     @JsonProperty("timetable")
     public void setTimetable(GeneratedJsonTimetable timetable) {
         this.timetable = timetable;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

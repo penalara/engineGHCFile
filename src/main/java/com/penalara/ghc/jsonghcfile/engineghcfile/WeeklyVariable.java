@@ -70,38 +70,6 @@ public class WeeklyVariable {
     private Boolean allowDiscontinuity = false;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeeklyVariable() {
-    }
-
-    /**
-     * 
-     * @param allowDiscontinuity
-     *     It indicates whether discontinuous sections are allowed, that is, having sections of other class units or breaks in between them.
-     * @param minMinutesDaily
-     *     Minimun of minutes per day.
-     * @param avoidMinDuration
-     *     It indicates the preference for class units of minimun duration.
-     * @param avoidMaxDuration
-     *     It indicates the preference for class units of maximum duration.
-     * @param minutesAmount
-     *     Total of session's weekly minutes.
-     * @param maxMinutesDaily
-     *     Maximum of minutes per day.
-     */
-    public WeeklyVariable(Integer minutesAmount, Integer maxMinutesDaily, Integer minMinutesDaily, Boolean avoidMaxDuration, Boolean avoidMinDuration, Boolean allowDiscontinuity) {
-        super();
-        this.minutesAmount = minutesAmount;
-        this.maxMinutesDaily = maxMinutesDaily;
-        this.minMinutesDaily = minMinutesDaily;
-        this.avoidMaxDuration = avoidMaxDuration;
-        this.avoidMinDuration = avoidMinDuration;
-        this.allowDiscontinuity = allowDiscontinuity;
-    }
-
-    /**
      * Total of session's weekly minutes.
      * (Required)
      * 

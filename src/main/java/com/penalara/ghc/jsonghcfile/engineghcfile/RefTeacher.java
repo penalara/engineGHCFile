@@ -49,27 +49,6 @@ public class RefTeacher {
     private List<OnCallSectionPreference> teacherFrameTemplate = new ArrayList<OnCallSectionPreference>();
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public RefTeacher() {
-    }
-
-    /**
-     * 
-     * @param teacherId
-     *     Teacher identifier.
-     * @param numOfSections
-     *     Number of on-call services to be done weekly by the teacher.
-     */
-    public RefTeacher(String teacherId, Integer numOfSections, List<OnCallSectionPreference> teacherFrameTemplate) {
-        super();
-        this.teacherId = teacherId;
-        this.numOfSections = numOfSections;
-        this.teacherFrameTemplate = teacherFrameTemplate;
-    }
-
-    /**
      * Teacher identifier.
      * (Required)
      * 

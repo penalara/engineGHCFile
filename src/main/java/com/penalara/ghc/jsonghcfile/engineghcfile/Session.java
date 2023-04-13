@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -144,50 +149,8 @@ public class Session {
     @JsonProperty("sessionRelations")
     @JsonPropertyDescription("It contains information on the relationships between this and other class units. These conditions can only apply to class units with students.")
     private SessionRelations sessionRelations;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Session() {
-    }
-
-    /**
-     * 
-     * @param refMainSubject
-     *     RefMainSubject. Identifier name of the main subject.
-     * @param refFrame
-     *     Session's frame identifier.
-     * @param sessionRelations
-     *     SessionRelations. It contains information on the relationships between this and other class units. These conditions can only apply to class units with students.
-     * @param sessionClassRooms
-     *     SessionClassRooms. It contains the information about the classrooms for the class units. At least one classroom is required for the class units.
-     * @param otherElementsInClassRooms
-     *     OtherElementsInClassRoomsList. List of other time elements in the classroom related to each other.
-     * @param id
-     *     Session identifier.
-     * @param sessionSettings
-     *     SessionSettings. Conditions on the position of the class unit.
-     * @param refMainTask
-     *     RefMainTask. Main Task identifier.
-     * @param refMainTeacher
-     *     RefMainTeacher. Main Teacher identifier.
-     */
-    public Session(Integer id, String refFrame, String refMainTask, String refMainTeacher, String refMainSubject, GroupReferenceType refMainGroup, List<OtherElementsInClassRooms> otherElementsInClassRooms, Distribution distribution, SessionClassRooms sessionClassRooms, List<SessionSectionPreference> frameTemplate, SessionSettings sessionSettings, SessionRelations sessionRelations) {
-        super();
-        this.id = id;
-        this.refFrame = refFrame;
-        this.refMainTask = refMainTask;
-        this.refMainTeacher = refMainTeacher;
-        this.refMainSubject = refMainSubject;
-        this.refMainGroup = refMainGroup;
-        this.otherElementsInClassRooms = otherElementsInClassRooms;
-        this.distribution = distribution;
-        this.sessionClassRooms = sessionClassRooms;
-        this.frameTemplate = frameTemplate;
-        this.sessionSettings = sessionSettings;
-        this.sessionRelations = sessionRelations;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Session identifier.
@@ -459,6 +422,16 @@ public class Session {
     @JsonProperty("sessionRelations")
     public void setSessionRelations(SessionRelations sessionRelations) {
         this.sessionRelations = sessionRelations;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

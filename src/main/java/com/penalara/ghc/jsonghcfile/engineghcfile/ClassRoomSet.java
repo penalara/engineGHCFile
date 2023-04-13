@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -48,29 +53,8 @@ public class ClassRoomSet {
     @JsonProperty("anonymousRooms")
     @JsonPropertyDescription("Number of non-specific defined classrooms that the group contains.")
     private Integer anonymousRooms = 0;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public ClassRoomSet() {
-    }
-
-    /**
-     * 
-     * @param anonymousRooms
-     *     Number of non-specific defined classrooms that the group contains.
-     * @param rooms
-     *     ClassRoomEntries. Classrooms identifiers which contain the group.
-     * @param id
-     *     ClassRooms group identifier.
-     */
-    public ClassRoomSet(String id, List<String> rooms, Integer anonymousRooms) {
-        super();
-        this.id = id;
-        this.rooms = rooms;
-        this.anonymousRooms = anonymousRooms;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * ClassRooms group identifier.
@@ -132,6 +116,16 @@ public class ClassRoomSet {
     @JsonProperty("anonymousRooms")
     public void setAnonymousRooms(Integer anonymousRooms) {
         this.anonymousRooms = anonymousRooms;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

@@ -68,38 +68,6 @@ public class TeachersOptimization {
     private Integer onCallSectionsOnBorders = 1;
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public TeachersOptimization() {
-    }
-
-    /**
-     * 
-     * @param onCallSectionsOnBorders
-     *     It indicates the weight of the teacher being assigned an on-call hour within the limits of his or her timetable, thus trying to fit it into the gaps in his or her class units.
-     * @param uniformDailyDistribution
-     *     It indicates the weight of placing a teacher's class units in a non-uniform way during the week.
-     * @param excessPermanence
-     *     It indicates the weight of assigning more daily or weekly stay than the declared in the settings.
-     * @param excessContinuousTeaching
-     *     It indicates the weight of placing more continuous class units than those declared in the settings.
-     * @param teacherIncompatibities
-     *     It indicates the weight of the teacher's incompatibilities that can be optimised.
-     * @param continuousSessionsWithGroup
-     *     It indicates the weight of having consecutive class units taught to the same group.
-     */
-    public TeachersOptimization(Integer teacherIncompatibities, Integer uniformDailyDistribution, Integer excessContinuousTeaching, Integer excessPermanence, Integer continuousSessionsWithGroup, Integer onCallSectionsOnBorders) {
-        super();
-        this.teacherIncompatibities = teacherIncompatibities;
-        this.uniformDailyDistribution = uniformDailyDistribution;
-        this.excessContinuousTeaching = excessContinuousTeaching;
-        this.excessPermanence = excessPermanence;
-        this.continuousSessionsWithGroup = continuousSessionsWithGroup;
-        this.onCallSectionsOnBorders = onCallSectionsOnBorders;
-    }
-
-    /**
      * It indicates the weight of the teacher's incompatibilities that can be optimised.
      * 
      */

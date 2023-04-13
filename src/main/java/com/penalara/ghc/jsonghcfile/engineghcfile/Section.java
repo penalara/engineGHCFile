@@ -2,8 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -77,38 +81,8 @@ public class Section {
     @JsonProperty("allowed")
     @JsonPropertyDescription("It indicates if the section is available to assign.")
     private Boolean allowed = true;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Section() {
-    }
-
-    /**
-     * 
-     * @param duration
-     *     It indicates the duration (real or proportional) of the section in minutes.
-     * @param entryTime
-     *     Start time of the section.
-     * @param exitTime
-     *     End time of the section.
-     * @param allowed
-     *     It indicates if the section is available to assign.
-     * @param index
-     *     Index built into the day where the section is located.
-     * @param type
-     *     SectionType. Kind of section.
-     */
-    public Section(Integer index, String entryTime, String exitTime, Integer duration, Section.SectionType type, Boolean allowed) {
-        super();
-        this.index = index;
-        this.entryTime = entryTime;
-        this.exitTime = exitTime;
-        this.duration = duration;
-        this.type = type;
-        this.allowed = allowed;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * Index built into the day where the section is located.
@@ -230,6 +204,16 @@ public class Section {
     @JsonProperty("allowed")
     public void setAllowed(Boolean allowed) {
         this.allowed = allowed;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 

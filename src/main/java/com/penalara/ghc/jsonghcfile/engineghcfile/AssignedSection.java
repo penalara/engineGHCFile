@@ -69,35 +69,6 @@ public class AssignedSection {
     private List<SessionAssigned> sessionsAssigned = new ArrayList<SessionAssigned>();
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public AssignedSection() {
-    }
-
-    /**
-     * 
-     * @param refFrame
-     *     Frame timetable section with assignment.
-     * @param realIndex
-     *     Position on the day, of the real section, in the frame.
-     * @param day
-     *     Day of the week when the section is located.
-     * @param sessionsAssigned
-     *     SessionsAssigned. List of class units and on call hours assigned in the section.
-     * @param fictionalIndex
-     *     Position on the day, of the fictional section, in the frame.
-     */
-    public AssignedSection(String refFrame, Integer day, Integer realIndex, Integer fictionalIndex, List<SessionAssigned> sessionsAssigned) {
-        super();
-        this.refFrame = refFrame;
-        this.day = day;
-        this.realIndex = realIndex;
-        this.fictionalIndex = fictionalIndex;
-        this.sessionsAssigned = sessionsAssigned;
-    }
-
-    /**
      * Frame timetable section with assignment.
      * (Required)
      * 

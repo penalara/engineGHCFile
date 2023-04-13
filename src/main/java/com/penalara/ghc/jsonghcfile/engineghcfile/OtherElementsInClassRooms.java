@@ -1,6 +1,11 @@
 
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -58,30 +63,8 @@ public class OtherElementsInClassRooms {
     @JsonProperty("refTask")
     @JsonPropertyDescription("Identifier name of the task of the other teacher.")
     private String refTask;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public OtherElementsInClassRooms() {
-    }
-
-    /**
-     * 
-     * @param refSubject
-     *     SubjectReference. Identifier name of other subject in the classroom.
-     * @param refTeacher
-     *     TeacherReference. Identifier name of other teacher in the classroom.
-     * @param refTask
-     *     TaskReference. Identifier name of the task of the other teacher.
-     */
-    public OtherElementsInClassRooms(String refSubject, String refTeacher, GroupReferenceType refGroup, String refTask) {
-        super();
-        this.refSubject = refSubject;
-        this.refTeacher = refTeacher;
-        this.refGroup = refGroup;
-        this.refTask = refTask;
-    }
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * SubjectReference
@@ -169,6 +152,16 @@ public class OtherElementsInClassRooms {
     @JsonProperty("refTask")
     public void setRefTask(String refTask) {
         this.refTask = refTask;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

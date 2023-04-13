@@ -53,29 +53,6 @@ public class SessionClassRooms {
     private SessionClassRooms.CapacityType capacityType = SessionClassRooms.CapacityType.fromValue("individual");
 
     /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public SessionClassRooms() {
-    }
-
-    /**
-     * 
-     * @param capacityPreference
-     *     Preference on whether the engine should assess the capacity of the classroom to allocate each class unit.
-     * @param capacityType
-     *     It indicates whether all students in the class units should fit in each classroom, or in the amount of all classrooms.
-     * @param classRoomsToAssign
-     *     ClassRoomsToAssign. List of classrooms to the session. Each object in the list represent one classroom that must be assigned.
-     */
-    public SessionClassRooms(List<RefClassRoomToAssign> classRoomsToAssign, SessionClassRooms.CapacityPreference capacityPreference, SessionClassRooms.CapacityType capacityType) {
-        super();
-        this.classRoomsToAssign = classRoomsToAssign;
-        this.capacityPreference = capacityPreference;
-        this.capacityType = capacityType;
-    }
-
-    /**
      * ClassRoomsToAssign
      * <p>
      * List of classrooms to the session. Each object in the list represent one classroom that must be assigned.
