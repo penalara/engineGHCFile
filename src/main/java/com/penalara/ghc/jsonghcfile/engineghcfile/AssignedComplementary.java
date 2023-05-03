@@ -18,8 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "refComplementary",
-    "refClassRomms",
-    "refTeacher"
+    "refClassRomms"
 })
 public class AssignedComplementary {
 
@@ -40,16 +39,6 @@ public class AssignedComplementary {
     @JsonProperty("refClassRomms")
     @JsonPropertyDescription("List of classrooms assigned to teach the class unit.")
     private List<String> refClassRomms = new ArrayList<String>();
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeacher")
-    @JsonPropertyDescription("List of teachers assigned to the class unit.")
-    private List<String> refTeacher = new ArrayList<String>();
 
     /**
      * Identifier of the Complementary Activity assigned.
@@ -91,30 +80,6 @@ public class AssignedComplementary {
     @JsonProperty("refClassRomms")
     public void setRefClassRomms(List<String> refClassRomms) {
         this.refClassRomms = refClassRomms;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeacher")
-    public List<String> getRefTeacher() {
-        return refTeacher;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeacher")
-    public void setRefTeacher(List<String> refTeacher) {
-        this.refTeacher = refTeacher;
     }
 
 }

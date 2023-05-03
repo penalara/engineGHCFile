@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "refMeeting",
-    "refTeachers",
     "refClassRomms"
 })
 public class AssignedMeeting {
@@ -31,16 +30,6 @@ public class AssignedMeeting {
     @JsonProperty("refMeeting")
     @JsonPropertyDescription("Identifier of the meeting assigned.")
     private String refMeeting;
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeachers")
-    @JsonPropertyDescription("List of teachers assigned to the class unit.")
-    private List<String> refTeachers = new ArrayList<String>();
     /**
      * RefclassRomms
      * <p>
@@ -69,30 +58,6 @@ public class AssignedMeeting {
     @JsonProperty("refMeeting")
     public void setRefMeeting(String refMeeting) {
         this.refMeeting = refMeeting;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeachers")
-    public List<String> getRefTeachers() {
-        return refTeachers;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * (Required)
-     * 
-     */
-    @JsonProperty("refTeachers")
-    public void setRefTeachers(List<String> refTeachers) {
-        this.refTeachers = refTeachers;
     }
 
     /**

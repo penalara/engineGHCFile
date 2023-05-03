@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "refSession",
     "refClassRomms",
-    "refTeacher"
+    "refTeachers"
 })
 public class AssignedTeachingSession {
 
@@ -41,14 +41,14 @@ public class AssignedTeachingSession {
     @JsonPropertyDescription("List of classrooms assigned to teach the class unit.")
     private List<String> refClassRomms = new ArrayList<String>();
     /**
-     * RefMainTeacher
+     * RefTeachers
      * <p>
-     * Identifier of the MAIN teacher of the session in the input file.
+     * Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.
      * 
      */
-    @JsonProperty("refTeacher")
-    @JsonPropertyDescription("Identifier of the MAIN teacher of the session in the input file.")
-    private String refTeacher;
+    @JsonProperty("refTeachers")
+    @JsonPropertyDescription("Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.")
+    private List<String> refTeachers = new ArrayList<String>();
 
     /**
      * Identifier of the teaching session assigned.
@@ -93,25 +93,25 @@ public class AssignedTeachingSession {
     }
 
     /**
-     * RefMainTeacher
+     * RefTeachers
      * <p>
-     * Identifier of the MAIN teacher of the session in the input file.
+     * Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.
      * 
      */
-    @JsonProperty("refTeacher")
-    public String getRefTeacher() {
-        return refTeacher;
+    @JsonProperty("refTeachers")
+    public List<String> getRefTeachers() {
+        return refTeachers;
     }
 
     /**
-     * RefMainTeacher
+     * RefTeachers
      * <p>
-     * Identifier of the MAIN teacher of the session in the input file.
+     * Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.
      * 
      */
-    @JsonProperty("refTeacher")
-    public void setRefTeacher(String refTeacher) {
-        this.refTeacher = refTeacher;
+    @JsonProperty("refTeachers")
+    public void setRefTeachers(List<String> refTeachers) {
+        this.refTeachers = refTeachers;
     }
 
 }
