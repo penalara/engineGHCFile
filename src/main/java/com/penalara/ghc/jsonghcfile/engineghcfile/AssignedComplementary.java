@@ -29,7 +29,7 @@ public class AssignedComplementary {
      */
     @JsonProperty("refComplementary")
     @JsonPropertyDescription("Identifier of the Complementary Activity assigned.")
-    private Integer refComplementary;
+    private String refComplementary;
     /**
      * RefclassRomms
      * <p>
@@ -46,7 +46,7 @@ public class AssignedComplementary {
      * 
      */
     @JsonProperty("refComplementary")
-    public Integer getRefComplementary() {
+    public String getRefComplementary() {
         return refComplementary;
     }
 
@@ -56,7 +56,7 @@ public class AssignedComplementary {
      * 
      */
     @JsonProperty("refComplementary")
-    public void setRefComplementary(Integer refComplementary) {
+    public void setRefComplementary(String refComplementary) {
         this.refComplementary = refComplementary;
     }
 
