@@ -2,12 +2,7 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -46,16 +41,14 @@ public class AssignedTeachingSession {
     @JsonPropertyDescription("List of classrooms assigned to teach the class unit.")
     private List<String> refClassRomms = new ArrayList<String>();
     /**
-     * RefTeachers
+     * RefMainTeacher
      * <p>
-     * List of teachers assigned to the class unit.
+     * Identifier of the MAIN teacher of the session in the input file.
      * 
      */
     @JsonProperty("refTeacher")
-    @JsonPropertyDescription("List of teachers assigned to the class unit.")
-    private List<String> refTeacher = new ArrayList<String>();
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+    @JsonPropertyDescription("Identifier of the MAIN teacher of the session in the input file.")
+    private String refTeacher;
 
     /**
      * Identifier of the teaching session assigned.
@@ -100,35 +93,25 @@ public class AssignedTeachingSession {
     }
 
     /**
-     * RefTeachers
+     * RefMainTeacher
      * <p>
-     * List of teachers assigned to the class unit.
+     * Identifier of the MAIN teacher of the session in the input file.
      * 
      */
     @JsonProperty("refTeacher")
-    public List<String> getRefTeacher() {
+    public String getRefTeacher() {
         return refTeacher;
     }
 
     /**
-     * RefTeachers
+     * RefMainTeacher
      * <p>
-     * List of teachers assigned to the class unit.
+     * Identifier of the MAIN teacher of the session in the input file.
      * 
      */
     @JsonProperty("refTeacher")
-    public void setRefTeacher(List<String> refTeacher) {
+    public void setRefTeacher(String refTeacher) {
         this.refTeacher = refTeacher;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
