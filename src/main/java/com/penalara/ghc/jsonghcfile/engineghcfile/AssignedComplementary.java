@@ -15,27 +15,26 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * SessionAssigned
+ * AssignedComplementary
  * <p>
- * Class unit or on call hour assigned in the timetable.
+ * Teacher's complementary activity assigned in the timetable.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "refSesion",
-    "refClassRomms",
-    "refTeachers"
+    "refComplementary",
+    "refClassRomms"
 })
-public class SessionAssigned {
+public class AssignedComplementary {
 
     /**
-     * Identifier of the session in the input file.
+     * Identifier of the Complementary Activity assigned.
      * (Required)
      * 
      */
-    @JsonProperty("refSesion")
-    @JsonPropertyDescription("Identifier of the session in the input file.")
-    private Integer refSesion;
+    @JsonProperty("refComplementary")
+    @JsonPropertyDescription("Identifier of the Complementary Activity assigned.")
+    private Integer refComplementary;
     /**
      * RefclassRomms
      * <p>
@@ -45,36 +44,27 @@ public class SessionAssigned {
     @JsonProperty("refClassRomms")
     @JsonPropertyDescription("List of classrooms assigned to teach the class unit.")
     private List<String> refClassRomms = new ArrayList<String>();
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * 
-     */
-    @JsonProperty("refTeachers")
-    @JsonPropertyDescription("List of teachers assigned to the class unit.")
-    private List<String> refTeachers = new ArrayList<String>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
-     * Identifier of the session in the input file.
+     * Identifier of the Complementary Activity assigned.
      * (Required)
      * 
      */
-    @JsonProperty("refSesion")
-    public Integer getRefSesion() {
-        return refSesion;
+    @JsonProperty("refComplementary")
+    public Integer getRefComplementary() {
+        return refComplementary;
     }
 
     /**
-     * Identifier of the session in the input file.
+     * Identifier of the Complementary Activity assigned.
      * (Required)
      * 
      */
-    @JsonProperty("refSesion")
-    public void setRefSesion(Integer refSesion) {
-        this.refSesion = refSesion;
+    @JsonProperty("refComplementary")
+    public void setRefComplementary(Integer refComplementary) {
+        this.refComplementary = refComplementary;
     }
 
     /**
@@ -97,28 +87,6 @@ public class SessionAssigned {
     @JsonProperty("refClassRomms")
     public void setRefClassRomms(List<String> refClassRomms) {
         this.refClassRomms = refClassRomms;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * 
-     */
-    @JsonProperty("refTeachers")
-    public List<String> getRefTeachers() {
-        return refTeachers;
-    }
-
-    /**
-     * RefTeachers
-     * <p>
-     * List of teachers assigned to the class unit.
-     * 
-     */
-    @JsonProperty("refTeachers")
-    public void setRefTeachers(List<String> refTeachers) {
-        this.refTeachers = refTeachers;
     }
 
     @JsonAnyGetter

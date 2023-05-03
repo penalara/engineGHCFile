@@ -17,11 +17,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "anonymousClassRooms",
     "assignedSections",
-    "anonymousClassRooms"
+    "additionalProperties"
 })
 public class GeneratedJsonTimetable {
 
+    /**
+     * SetOfAnonymousClassRooms
+     * <p>
+     * Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.
+     * 
+     */
+    @JsonProperty("anonymousClassRooms")
+    @JsonPropertyDescription("Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.")
+    private List<AnonymousClassRoom> anonymousClassRooms = new ArrayList<AnonymousClassRoom>();
     /**
      * AssignedSections
      * <p>
@@ -32,6 +42,9 @@ public class GeneratedJsonTimetable {
     @JsonProperty("assignedSections")
     @JsonPropertyDescription("List of sections assigned in the Timetable.")
     private List<AssignedSection> assignedSections = new ArrayList<AssignedSection>();
+    @JsonProperty("additionalProperties")
+    private Object additionalProperties;
+
     /**
      * SetOfAnonymousClassRooms
      * <p>
@@ -39,8 +52,20 @@ public class GeneratedJsonTimetable {
      * 
      */
     @JsonProperty("anonymousClassRooms")
-    @JsonPropertyDescription("Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.")
-    private List<AnonymousClassRoom> anonymousClassRooms = new ArrayList<AnonymousClassRoom>();
+    public List<AnonymousClassRoom> getAnonymousClassRooms() {
+        return anonymousClassRooms;
+    }
+
+    /**
+     * SetOfAnonymousClassRooms
+     * <p>
+     * Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.
+     * 
+     */
+    @JsonProperty("anonymousClassRooms")
+    public void setAnonymousClassRooms(List<AnonymousClassRoom> anonymousClassRooms) {
+        this.anonymousClassRooms = anonymousClassRooms;
+    }
 
     /**
      * AssignedSections
@@ -66,26 +91,14 @@ public class GeneratedJsonTimetable {
         this.assignedSections = assignedSections;
     }
 
-    /**
-     * SetOfAnonymousClassRooms
-     * <p>
-     * Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.
-     * 
-     */
-    @JsonProperty("anonymousClassRooms")
-    public List<AnonymousClassRoom> getAnonymousClassRooms() {
-        return anonymousClassRooms;
+    @JsonProperty("additionalProperties")
+    public Object getAdditionalProperties() {
+        return additionalProperties;
     }
 
-    /**
-     * SetOfAnonymousClassRooms
-     * <p>
-     * Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.
-     * 
-     */
-    @JsonProperty("anonymousClassRooms")
-    public void setAnonymousClassRooms(List<AnonymousClassRoom> anonymousClassRooms) {
-        this.anonymousClassRooms = anonymousClassRooms;
+    @JsonProperty("additionalProperties")
+    public void setAdditionalProperties(Object additionalProperties) {
+        this.additionalProperties = additionalProperties;
     }
 
 }

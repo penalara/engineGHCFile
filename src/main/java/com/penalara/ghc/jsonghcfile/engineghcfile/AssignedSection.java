@@ -1,8 +1,6 @@
 
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -21,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "day",
     "realIndex",
     "fictionalIndex",
-    "sessionsAssigned"
+    "assignment"
 })
 public class AssignedSection {
 
@@ -58,15 +56,14 @@ public class AssignedSection {
     @JsonPropertyDescription("Position on the day, of the fictional section, in the frame.")
     private Integer fictionalIndex;
     /**
-     * SessionsAssigned
+     * Assignment
      * <p>
-     * List of class units and on call hours assigned in the section.
-     * (Required)
+     * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
      * 
      */
-    @JsonProperty("sessionsAssigned")
-    @JsonPropertyDescription("List of class units and on call hours assigned in the section.")
-    private List<SessionAssigned> sessionsAssigned = new ArrayList<SessionAssigned>();
+    @JsonProperty("assignment")
+    @JsonPropertyDescription("Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).")
+    private Assignment assignment;
 
     /**
      * Frame timetable section with assignment.
@@ -149,27 +146,25 @@ public class AssignedSection {
     }
 
     /**
-     * SessionsAssigned
+     * Assignment
      * <p>
-     * List of class units and on call hours assigned in the section.
-     * (Required)
+     * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
      * 
      */
-    @JsonProperty("sessionsAssigned")
-    public List<SessionAssigned> getSessionsAssigned() {
-        return sessionsAssigned;
+    @JsonProperty("assignment")
+    public Assignment getAssignment() {
+        return assignment;
     }
 
     /**
-     * SessionsAssigned
+     * Assignment
      * <p>
-     * List of class units and on call hours assigned in the section.
-     * (Required)
+     * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
      * 
      */
-    @JsonProperty("sessionsAssigned")
-    public void setSessionsAssigned(List<SessionAssigned> sessionsAssigned) {
-        this.sessionsAssigned = sessionsAssigned;
+    @JsonProperty("assignment")
+    public void setAssignment(Assignment assignment) {
+        this.assignment = assignment;
     }
 
 }
