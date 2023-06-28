@@ -17,14 +17,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * Teacher
  * <p>
- * Object with personal information and teachers' preferences.
+ * Object with personal information and teachers' preferences.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
     "associationIdentifier",
-    "overlapped",
+    "overlappedAssessment",
     "frameTemplate",
     "generalSettings",
     "periodSettings"
@@ -47,12 +47,12 @@ public class Teacher {
     @JsonPropertyDescription("Group or association of teachers who should have similar check-in and check-out times, if possible. This is useful for teachers who share transport.")
     private String associationIdentifier;
     /**
-     * It indicates if the teacher can have overlapped sessions
+     * Number of overlapped evaluation sessions.The engine only process it into account when the SourceModule is 'je'
      * 
      */
-    @JsonProperty("overlapped")
-    @JsonPropertyDescription("It indicates if the teacher can have overlapped sessions")
-    private Boolean overlapped = false;
+    @JsonProperty("overlappedAssessment")
+    @JsonPropertyDescription("Number of overlapped evaluation sessions.")
+    private Integer overlappedAssessment = 1;
     /**
      * FrameTemplate
      * <p>
@@ -122,21 +122,21 @@ public class Teacher {
     }
 
     /**
-     * It indicates if the teacher can have overlapped sessions
+     * Number of overlapped evaluation sessions.The engine only process it into account when the SourceModule is 'je'
      * 
      */
-    @JsonProperty("overlapped")
-    public Boolean getOverlapped() {
-        return overlapped;
+    @JsonProperty("overlappedAssessment")
+    public Integer getOverlappedAssessment() {
+        return overlappedAssessment;
     }
 
     /**
-     * It indicates if the teacher can have overlapped sessions
+     * Number of overlapped evaluation sessions.The engine only process it into account when the SourceModule is 'je'
      * 
      */
-    @JsonProperty("overlapped")
-    public void setOverlapped(Boolean overlapped) {
-        this.overlapped = overlapped;
+    @JsonProperty("overlappedAssessment")
+    public void setOverlappedAssessment(Integer overlappedAssessment) {
+        this.overlappedAssessment = overlappedAssessment;
     }
 
     /**

@@ -2,12 +2,7 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -65,8 +60,6 @@ public class Assignment {
     @JsonProperty("onCallServices")
     @JsonPropertyDescription("List of teaching on call hours assigned in the section.")
     private List<AssignedOnCallService> onCallServices = new ArrayList<AssignedOnCallService>();
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * TeachingSessions
@@ -154,16 +147,6 @@ public class Assignment {
     @JsonProperty("onCallServices")
     public void setOnCallServices(List<AssignedOnCallService> onCallServices) {
         this.onCallServices = onCallServices;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

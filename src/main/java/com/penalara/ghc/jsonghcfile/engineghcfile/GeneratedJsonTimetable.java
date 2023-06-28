@@ -18,8 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "anonymousClassRooms",
-    "assignedSections",
-    "additionalProperties"
+    "assignedSections"
 })
 public class GeneratedJsonTimetable {
 
@@ -42,8 +41,6 @@ public class GeneratedJsonTimetable {
     @JsonProperty("assignedSections")
     @JsonPropertyDescription("List of sections assigned in the Timetable.")
     private List<AssignedSection> assignedSections = new ArrayList<AssignedSection>();
-    @JsonProperty("additionalProperties")
-    private Object additionalProperties;
 
     /**
      * SetOfAnonymousClassRooms
@@ -89,16 +86,6 @@ public class GeneratedJsonTimetable {
     @JsonProperty("assignedSections")
     public void setAssignedSections(List<AssignedSection> assignedSections) {
         this.assignedSections = assignedSections;
-    }
-
-    @JsonProperty("additionalProperties")
-    public Object getAdditionalProperties() {
-        return additionalProperties;
-    }
-
-    @JsonProperty("additionalProperties")
-    public void setAdditionalProperties(Object additionalProperties) {
-        this.additionalProperties = additionalProperties;
     }
 
 }

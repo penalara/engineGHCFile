@@ -59,6 +59,7 @@ public class AssignedSection {
      * Assignment
      * <p>
      * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
+     * (Required)
      * 
      */
     @JsonProperty("assignment")
@@ -149,6 +150,7 @@ public class AssignedSection {
      * Assignment
      * <p>
      * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
+     * (Required)
      * 
      */
     @JsonProperty("assignment")
@@ -160,6 +162,7 @@ public class AssignedSection {
      * Assignment
      * <p>
      * Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).
+     * (Required)
      * 
      */
     @JsonProperty("assignment")

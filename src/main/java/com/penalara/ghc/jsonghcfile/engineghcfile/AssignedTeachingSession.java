@@ -25,6 +25,7 @@ public class AssignedTeachingSession {
 
     /**
      * Identifier of the teaching session assigned.
+     * (Required)
      * 
      */
     @JsonProperty("refSession")
@@ -52,6 +53,7 @@ public class AssignedTeachingSession {
 
     /**
      * Identifier of the teaching session assigned.
+     * (Required)
      * 
      */
     @JsonProperty("refSession")
@@ -61,6 +63,7 @@ public class AssignedTeachingSession {
 
     /**
      * Identifier of the teaching session assigned.
+     * (Required)
      * 
      */
     @JsonProperty("refSession")
