@@ -31,41 +31,41 @@ public class DailyOcupation {
     @JsonPropertyDescription("It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.")
     private Boolean allowFreeDays;
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumTeaching")
-    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
-    private ConditionTypeWithTime minimumTeaching;
+    @JsonPropertyDescription("Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not")
+    private ConditionOcupancy minimumTeaching;
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumTeaching")
-    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
-    private ConditionTypeWithTime maximumTeaching;
+    @JsonPropertyDescription("Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not")
+    private ConditionOcupancy maximumTeaching;
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumOccupancy")
-    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
-    private ConditionTypeWithTime minimumOccupancy;
+    @JsonPropertyDescription("Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not")
+    private ConditionOcupancy minimumOccupancy;
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumOccupancy")
-    @JsonPropertyDescription("Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.")
-    private ConditionTypeWithTime maximumOccupancy;
+    @JsonPropertyDescription("Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not")
+    private ConditionOcupancy maximumOccupancy;
 
     /**
      * It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.
@@ -86,90 +86,90 @@ public class DailyOcupation {
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumTeaching")
-    public ConditionTypeWithTime getMinimumTeaching() {
+    public ConditionOcupancy getMinimumTeaching() {
         return minimumTeaching;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumTeaching")
-    public void setMinimumTeaching(ConditionTypeWithTime minimumTeaching) {
+    public void setMinimumTeaching(ConditionOcupancy minimumTeaching) {
         this.minimumTeaching = minimumTeaching;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumTeaching")
-    public ConditionTypeWithTime getMaximumTeaching() {
+    public ConditionOcupancy getMaximumTeaching() {
         return maximumTeaching;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumTeaching")
-    public void setMaximumTeaching(ConditionTypeWithTime maximumTeaching) {
+    public void setMaximumTeaching(ConditionOcupancy maximumTeaching) {
         this.maximumTeaching = maximumTeaching;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumOccupancy")
-    public ConditionTypeWithTime getMinimumOccupancy() {
+    public ConditionOcupancy getMinimumOccupancy() {
         return minimumOccupancy;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("minimumOccupancy")
-    public void setMinimumOccupancy(ConditionTypeWithTime minimumOccupancy) {
+    public void setMinimumOccupancy(ConditionOcupancy minimumOccupancy) {
         this.minimumOccupancy = minimumOccupancy;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumOccupancy")
-    public ConditionTypeWithTime getMaximumOccupancy() {
+    public ConditionOcupancy getMaximumOccupancy() {
         return maximumOccupancy;
     }
 
     /**
-     * ConditionTypeWithTime
+     * ConditionOcupancy
      * <p>
-     * Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.
+     * Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not
      * 
      */
     @JsonProperty("maximumOccupancy")
-    public void setMaximumOccupancy(ConditionTypeWithTime maximumOccupancy) {
+    public void setMaximumOccupancy(ConditionOcupancy maximumOccupancy) {
         this.maximumOccupancy = maximumOccupancy;
     }
 

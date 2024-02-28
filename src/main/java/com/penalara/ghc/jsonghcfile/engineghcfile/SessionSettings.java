@@ -24,7 +24,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
     "avoidAssingLastHourAndFirstNextDay",
     "sameHourPreference",
     "avoidAfternoonSessions",
-    "avoidSectionsAfterBreak",
+    "avoidAfterBreakSessions",
+    "nonBreakInTheMiddleOfConsecutiveSession",
     "nonBreakInTheMiddleOfSession",
     "followedDaysPreference",
     "consecutiveWeeksBorders",
@@ -71,9 +72,16 @@ public class SessionSettings {
      * It penalises if more than 50% of the class unit are after the last break of the day.
      * 
      */
-    @JsonProperty("avoidSectionsAfterBreak")
+    @JsonProperty("avoidAfterBreakSessions")
     @JsonPropertyDescription("It penalises if more than 50% of the class unit are after the last break of the day.")
-    private Boolean avoidSectionsAfterBreak = true;
+    private Boolean avoidAfterBreakSessions = true;
+    /**
+     * Do not allow breaks between consecutive class units (class duration of more than one section).
+     * 
+     */
+    @JsonProperty("nonBreakInTheMiddleOfConsecutiveSession")
+    @JsonPropertyDescription("Do not allow breaks between consecutive class units (class duration of more than one section).")
+    private Boolean nonBreakInTheMiddleOfConsecutiveSession = true;
     /**
      * Do not allow breaks between class units of multiple duration (class duration of more than one section).
      * 
@@ -199,18 +207,36 @@ public class SessionSettings {
      * It penalises if more than 50% of the class unit are after the last break of the day.
      * 
      */
-    @JsonProperty("avoidSectionsAfterBreak")
-    public Boolean getAvoidSectionsAfterBreak() {
-        return avoidSectionsAfterBreak;
+    @JsonProperty("avoidAfterBreakSessions")
+    public Boolean getAvoidAfterBreakSessions() {
+        return avoidAfterBreakSessions;
     }
 
     /**
      * It penalises if more than 50% of the class unit are after the last break of the day.
      * 
      */
-    @JsonProperty("avoidSectionsAfterBreak")
-    public void setAvoidSectionsAfterBreak(Boolean avoidSectionsAfterBreak) {
-        this.avoidSectionsAfterBreak = avoidSectionsAfterBreak;
+    @JsonProperty("avoidAfterBreakSessions")
+    public void setAvoidAfterBreakSessions(Boolean avoidAfterBreakSessions) {
+        this.avoidAfterBreakSessions = avoidAfterBreakSessions;
+    }
+
+    /**
+     * Do not allow breaks between consecutive class units (class duration of more than one section).
+     * 
+     */
+    @JsonProperty("nonBreakInTheMiddleOfConsecutiveSession")
+    public Boolean getNonBreakInTheMiddleOfConsecutiveSession() {
+        return nonBreakInTheMiddleOfConsecutiveSession;
+    }
+
+    /**
+     * Do not allow breaks between consecutive class units (class duration of more than one section).
+     * 
+     */
+    @JsonProperty("nonBreakInTheMiddleOfConsecutiveSession")
+    public void setNonBreakInTheMiddleOfConsecutiveSession(Boolean nonBreakInTheMiddleOfConsecutiveSession) {
+        this.nonBreakInTheMiddleOfConsecutiveSession = nonBreakInTheMiddleOfConsecutiveSession;
     }
 
     /**

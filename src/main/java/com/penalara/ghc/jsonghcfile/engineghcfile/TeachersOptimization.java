@@ -20,7 +20,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "excessContinuousTeaching",
     "excessPermanence",
     "continuousSessionsWithGroup",
-    "onCallSectionsOnBorders"
+    "onCallSectionsOnBorders",
+    "teacherOrder"
 })
 public class TeachersOptimization {
 
@@ -66,6 +67,13 @@ public class TeachersOptimization {
     @JsonProperty("onCallSectionsOnBorders")
     @JsonPropertyDescription("It indicates the weight of the teacher being assigned an on-call hour within the limits of his or her timetable, thus trying to fit it into the gaps in his or her class units.")
     private Integer onCallSectionsOnBorders = 1;
+    /**
+     * It indicates the weight of the teacher order not being assigned with a preference besides other teachers.
+     * 
+     */
+    @JsonProperty("teacherOrder")
+    @JsonPropertyDescription("It indicates the weight of the teacher order not being assigned with a preference besides other teachers.")
+    private Integer teacherOrder = 1;
 
     /**
      * It indicates the weight of the teacher's incompatibilities that can be optimised.
@@ -173,6 +181,24 @@ public class TeachersOptimization {
     @JsonProperty("onCallSectionsOnBorders")
     public void setOnCallSectionsOnBorders(Integer onCallSectionsOnBorders) {
         this.onCallSectionsOnBorders = onCallSectionsOnBorders;
+    }
+
+    /**
+     * It indicates the weight of the teacher order not being assigned with a preference besides other teachers.
+     * 
+     */
+    @JsonProperty("teacherOrder")
+    public Integer getTeacherOrder() {
+        return teacherOrder;
+    }
+
+    /**
+     * It indicates the weight of the teacher order not being assigned with a preference besides other teachers.
+     * 
+     */
+    @JsonProperty("teacherOrder")
+    public void setTeacherOrder(Integer teacherOrder) {
+        this.teacherOrder = teacherOrder;
     }
 
 }
