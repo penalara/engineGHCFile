@@ -276,7 +276,8 @@ public class FileMetadata {
     public enum SourceModule {
 
         HORARIOS("horarios"),
-        JE("je");
+        JE("je"),
+        EXAMENES("examenes");
         private final String value;
         private final static Map<String, FileMetadata.SourceModule> CONSTANTS = new HashMap<String, FileMetadata.SourceModule>();
 
