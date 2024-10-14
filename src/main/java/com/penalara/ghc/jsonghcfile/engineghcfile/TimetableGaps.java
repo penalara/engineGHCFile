@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * TimetableGaps
  * <p>
- * It contains options related to timetable-gaps weights.
+ * It contains options related to timetable-gaps weights.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -39,12 +39,12 @@ public class ClassRoomSet {
     /**
      * ClassRoomEntries
      * <p>
-     * Classrooms identifiers which contain the group.
+     * Classrooms identifiers which contain the group.
      * (Required)
      * 
      */
     @JsonProperty("rooms")
-    @JsonPropertyDescription("Classrooms identifiers\u00a0which\u00a0contain\u00a0the\u00a0group.")
+    @JsonPropertyDescription("Classrooms identifiers which contain the group.")
     private List<String> rooms = new ArrayList<String>();
     /**
      * Number of non-specific defined classrooms that the group contains.
@@ -79,7 +79,7 @@ public class ClassRoomSet {
     /**
      * ClassRoomEntries
      * <p>
-     * Classrooms identifiers which contain the group.
+     * Classrooms identifiers which contain the group.
      * (Required)
      * 
      */
@@ -91,7 +91,7 @@ public class ClassRoomSet {
     /**
      * ClassRoomEntries
      * <p>
-     * Classrooms identifiers which contain the group.
+     * Classrooms identifiers which contain the group.
      * (Required)
      * 
      */

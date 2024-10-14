@@ -23,7 +23,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 @JsonPropertyOrder({
     "classRoomsToAssign",
     "capacityPreference",
-    "capacityType"
+    "capacityType",
+    "alwaysSameClassRoom"
 })
 public class SessionClassRooms {
 
@@ -51,6 +52,13 @@ public class SessionClassRooms {
     @JsonProperty("capacityType")
     @JsonPropertyDescription("It indicates whether all students in the class units should fit in each classroom, or in the amount of all classrooms.")
     private SessionClassRooms.CapacityType capacityType = SessionClassRooms.CapacityType.fromValue("individual");
+    /**
+     * Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.
+     * 
+     */
+    @JsonProperty("alwaysSameClassRoom")
+    @JsonPropertyDescription("Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.")
+    private Boolean alwaysSameClassRoom = false;
 
     /**
      * ClassRoomsToAssign
@@ -110,6 +118,24 @@ public class SessionClassRooms {
     @JsonProperty("capacityType")
     public void setCapacityType(SessionClassRooms.CapacityType capacityType) {
         this.capacityType = capacityType;
+    }
+
+    /**
+     * Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.
+     * 
+     */
+    @JsonProperty("alwaysSameClassRoom")
+    public Boolean getAlwaysSameClassRoom() {
+        return alwaysSameClassRoom;
+    }
+
+    /**
+     * Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.
+     * 
+     */
+    @JsonProperty("alwaysSameClassRoom")
+    public void setAlwaysSameClassRoom(Boolean alwaysSameClassRoom) {
+        this.alwaysSameClassRoom = alwaysSameClassRoom;
     }
 
 

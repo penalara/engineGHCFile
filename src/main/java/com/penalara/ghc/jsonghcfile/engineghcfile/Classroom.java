@@ -48,7 +48,7 @@ public class Classroom {
     /**
      * BannedFrameTemplate
      * <p>
-     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
+     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
      * 
      */
     @JsonProperty("frameTemplate")
@@ -112,7 +112,7 @@ public class Classroom {
     /**
      * BannedFrameTemplate
      * <p>
-     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
+     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
      * 
      */
     @JsonProperty("frameTemplate")
@@ -123,7 +123,7 @@ public class Classroom {
     /**
      * BannedFrameTemplate
      * <p>
-     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
+     * Template with only banned preferences.It is used when the element cannot have non-preferred sections.
      * 
      */
     @JsonProperty("frameTemplate")

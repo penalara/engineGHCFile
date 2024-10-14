@@ -1,8 +1,6 @@
 
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,31 +15,19 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "weeklyStable",
-    "weeklyVariable",
+    "totalTime",
     "maximunTimeInPeriod",
     "minimnunTimeInPeriod"
 })
 public class VariablePeriods {
 
     /**
-     * WeeklyStable
-     * <p>
-     * It contains only one possible weekly distribution. Each value is a assignation day.
+     * Total number of minutes must asigned the sesion
      * 
      */
-    @JsonProperty("weeklyStable")
-    @JsonPropertyDescription("It contains only one possible weekly distribution. Each value is a assignation day.")
-    private List<Integer> weeklyStable = new ArrayList<Integer>();
-    /**
-     * WeeklyVariable
-     * <p>
-     * It defines the distribution as a number of sections per week and a maximum range of sections per day.
-     * 
-     */
-    @JsonProperty("weeklyVariable")
-    @JsonPropertyDescription("It defines the distribution as a number of sections per week and a maximum range of sections per day.")
-    private WeeklyVariable weeklyVariable;
+    @JsonProperty("totalTime")
+    @JsonPropertyDescription("Total number of minutes must asigned the sesion")
+    private Integer totalTime = 0;
     /**
      * Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
      * 
@@ -58,47 +44,21 @@ public class VariablePeriods {
     private Integer minimnunTimeInPeriod = 0;
 
     /**
-     * WeeklyStable
-     * <p>
-     * It contains only one possible weekly distribution. Each value is a assignation day.
+     * Total number of minutes must asigned the sesion
      * 
      */
-    @JsonProperty("weeklyStable")
-    public List<Integer> getWeeklyStable() {
-        return weeklyStable;
+    @JsonProperty("totalTime")
+    public Integer getTotalTime() {
+        return totalTime;
     }
 
     /**
-     * WeeklyStable
-     * <p>
-     * It contains only one possible weekly distribution. Each value is a assignation day.
+     * Total number of minutes must asigned the sesion
      * 
      */
-    @JsonProperty("weeklyStable")
-    public void setWeeklyStable(List<Integer> weeklyStable) {
-        this.weeklyStable = weeklyStable;
-    }
-
-    /**
-     * WeeklyVariable
-     * <p>
-     * It defines the distribution as a number of sections per week and a maximum range of sections per day.
-     * 
-     */
-    @JsonProperty("weeklyVariable")
-    public WeeklyVariable getWeeklyVariable() {
-        return weeklyVariable;
-    }
-
-    /**
-     * WeeklyVariable
-     * <p>
-     * It defines the distribution as a number of sections per week and a maximum range of sections per day.
-     * 
-     */
-    @JsonProperty("weeklyVariable")
-    public void setWeeklyVariable(WeeklyVariable weeklyVariable) {
-        this.weeklyVariable = weeklyVariable;
+    @JsonProperty("totalTime")
+    public void setTotalTime(Integer totalTime) {
+        this.totalTime = totalTime;
     }
 
     /**

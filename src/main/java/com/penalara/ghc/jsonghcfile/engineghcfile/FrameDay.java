@@ -38,12 +38,12 @@ public class FrameDay {
     /**
      * Sections
      * <p>
-     * Timetable cells where class units are located.
+     * Timetable cells where class units are located.
      * (Required)
      * 
      */
     @JsonProperty("sections")
-    @JsonPropertyDescription("Timetable\u00a0cells\u00a0where class units\u00a0are\u00a0located.")
+    @JsonPropertyDescription("Timetable cells where class units are located.")
     private List<Section> sections = new ArrayList<Section>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
@@ -71,7 +71,7 @@ public class FrameDay {
     /**
      * Sections
      * <p>
-     * Timetable cells where class units are located.
+     * Timetable cells where class units are located.
      * (Required)
      * 
      */
@@ -83,7 +83,7 @@ public class FrameDay {
     /**
      * Sections
      * <p>
-     * Timetable cells where class units are located.
+     * Timetable cells where class units are located.
      * (Required)
      * 
      */

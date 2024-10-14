@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * Complementary
  * <p>
- * Service of teacher`s complementary activity.It is incompatible set at same time refClassRoomToAssign and refBuilding.
+ * Service of teacher`s complementary activity.It is incompatible set at same time refClassRoomToAssign and refBuilding.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,7 +99,7 @@ public class Complementary {
     @JsonPropertyDescription("Object, with classrooms and/or set of classrooms, where the engine should assign classroom to each class unit of the session.")
     private RefClassRoomToAssign refClassRoomToAssign;
     /**
-     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
+     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
      * 
      */
     @JsonProperty("refBuilding")
@@ -274,7 +274,7 @@ public class Complementary {
     }
 
     /**
-     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
+     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
      * 
      */
     @JsonProperty("refBuilding")
@@ -283,7 +283,7 @@ public class Complementary {
     }
 
     /**
-     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
+     * Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.It is incompatible with the other properties of 'sessionClassRooms' object.
      * 
      */
     @JsonProperty("refBuilding")

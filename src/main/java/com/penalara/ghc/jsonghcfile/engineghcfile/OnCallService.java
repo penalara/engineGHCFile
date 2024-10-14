@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * OnCallService
  * <p>
- * On-call service of teachers who supervise the free time of students.Property 'refPeriods' is required if there are more than one period in the timetable.
+ * On-call service of teachers who supervise the free time of students.Property 'refPeriods' is required if there are more than one period in the timetable.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,12 +39,12 @@ public class OnCallService {
     @JsonPropertyDescription("On-Call service identifier.")
     private String id;
     /**
-     * Identifier of the frame where the service will be set.
+     * Identifier of the frame where the service will be set.
      * (Required)
      * 
      */
     @JsonProperty("refFrame")
-    @JsonPropertyDescription("Identifier\u00a0of\u00a0the\u00a0frame\u00a0where\u00a0the service will\u00a0be\u00a0set.")
+    @JsonPropertyDescription("Identifier of the frame where the service will be set.")
     private String refFrame;
     /**
      * RefPeriods
@@ -137,7 +137,7 @@ public class OnCallService {
     }
 
     /**
-     * Identifier of the frame where the service will be set.
+     * Identifier of the frame where the service will be set.
      * (Required)
      * 
      */
@@ -147,7 +147,7 @@ public class OnCallService {
     }
 
     /**
-     * Identifier of the frame where the service will be set.
+     * Identifier of the frame where the service will be set.
      * (Required)
      * 
      */

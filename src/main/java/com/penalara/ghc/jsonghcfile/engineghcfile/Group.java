@@ -72,11 +72,11 @@ public class Group {
     @JsonPropertyDescription("Stric number of free afternoons for the group.")
     private Integer freeAfternoons;
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * It indicates if the group can have gaps in its timetable.
      * 
      */
     @JsonProperty("notGaps")
-    @JsonPropertyDescription("It indicates\u00a0if\u00a0the\u00a0group\u00a0can\u00a0have\u00a0gaps\u00a0in\u00a0its\u00a0timetable.")
+    @JsonPropertyDescription("It indicates if the group can have gaps in its timetable.")
     private Boolean notGaps;
     /**
      * This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.
@@ -187,7 +187,7 @@ public class Group {
     }
 
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * It indicates if the group can have gaps in its timetable.
      * 
      */
     @JsonProperty("notGaps")
@@ -196,7 +196,7 @@ public class Group {
     }
 
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * It indicates if the group can have gaps in its timetable.
      * 
      */
     @JsonProperty("notGaps")

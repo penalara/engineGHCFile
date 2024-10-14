@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * RefTeacher
  * <p>
- * It contains a teacher reference and the number of section oversight .
+ * It contains a teacher reference and the number of section oversight .
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

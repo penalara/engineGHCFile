@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * NonPreferredPositionsOptimization
  * <p>
- * It contains options related to allocation in non-preferred sections.
+ * It contains options related to allocation in non-preferred sections.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,25 +23,25 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class NonPreferredPositionsOptimization {
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a group.
+     * It indicates the weight to be placed in a non-preferential section of a group.
      * 
      */
     @JsonProperty("inGroups")
-    @JsonPropertyDescription("It indicates\u00a0the\u00a0weight\u00a0to\u00a0be\u00a0placed\u00a0in\u00a0a\u00a0non-preferential\u00a0section\u00a0of\u00a0a\u00a0group.")
+    @JsonPropertyDescription("It indicates the weight to be placed in a non-preferential section of a group.")
     private Integer inGroups = 4;
     /**
-     * It indicates the weight to be placed in a non-preferential section of a teacher.
+     * It indicates the weight to be placed in a non-preferential section of a teacher.
      * 
      */
     @JsonProperty("inTeachers")
-    @JsonPropertyDescription("It indicates\u00a0the\u00a0weight\u00a0to\u00a0be\u00a0placed\u00a0in\u00a0a\u00a0non-preferential\u00a0section\u00a0of\u00a0a\u00a0teacher.")
+    @JsonPropertyDescription("It indicates the weight to be placed in a non-preferential section of a teacher.")
     private Integer inTeachers = 3;
     /**
-     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
+     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
      * 
      */
     @JsonProperty("inSubjectsAndTask")
-    @JsonPropertyDescription("It indicates\u00a0the\u00a0weight\u00a0to\u00a0be\u00a0placed\u00a0in\u00a0a\u00a0non-preferential\u00a0section\u00a0of\u00a0a\u00a0subject\u00a0or\u00a0a\u00a0task.")
+    @JsonPropertyDescription("It indicates the weight to be placed in a non-preferential section of a subject or a task.")
     private Integer inSubjectsAndTask = 1;
     /**
      * Indicates the weight to be placed in a non-preferential section of a session.
@@ -52,7 +52,7 @@ public class NonPreferredPositionsOptimization {
     private Integer inSessions = 2;
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a group.
+     * It indicates the weight to be placed in a non-preferential section of a group.
      * 
      */
     @JsonProperty("inGroups")
@@ -61,7 +61,7 @@ public class NonPreferredPositionsOptimization {
     }
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a group.
+     * It indicates the weight to be placed in a non-preferential section of a group.
      * 
      */
     @JsonProperty("inGroups")
@@ -70,7 +70,7 @@ public class NonPreferredPositionsOptimization {
     }
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a teacher.
+     * It indicates the weight to be placed in a non-preferential section of a teacher.
      * 
      */
     @JsonProperty("inTeachers")
@@ -79,7 +79,7 @@ public class NonPreferredPositionsOptimization {
     }
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a teacher.
+     * It indicates the weight to be placed in a non-preferential section of a teacher.
      * 
      */
     @JsonProperty("inTeachers")
@@ -88,7 +88,7 @@ public class NonPreferredPositionsOptimization {
     }
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
+     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
      * 
      */
     @JsonProperty("inSubjectsAndTask")
@@ -97,7 +97,7 @@ public class NonPreferredPositionsOptimization {
     }
 
     /**
-     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
+     * It indicates the weight to be placed in a non-preferential section of a subject or a task.
      * 
      */
     @JsonProperty("inSubjectsAndTask")

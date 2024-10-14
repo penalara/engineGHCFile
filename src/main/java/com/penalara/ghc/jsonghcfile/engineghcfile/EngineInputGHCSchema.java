@@ -70,11 +70,11 @@ public class EngineInputGHCSchema {
     /**
      * ClassRooms
      * <p>
-     * It contains the classrooms to organize the class units.
+     * It contains the classrooms to organize the class units.
      * 
      */
     @JsonProperty("classRooms")
-    @JsonPropertyDescription("It contains\u00a0the\u00a0classrooms\u00a0to organize\u00a0the\u00a0class units.")
+    @JsonPropertyDescription("It contains the classrooms to organize the class units.")
     private List<Classroom> classRooms = new ArrayList<Classroom>();
     /**
      * ClassRoomsSets
@@ -247,7 +247,7 @@ public class EngineInputGHCSchema {
     /**
      * ClassRooms
      * <p>
-     * It contains the classrooms to organize the class units.
+     * It contains the classrooms to organize the class units.
      * 
      */
     @JsonProperty("classRooms")
@@ -258,7 +258,7 @@ public class EngineInputGHCSchema {
     /**
      * ClassRooms
      * <p>
-     * It contains the classrooms to organize the class units.
+     * It contains the classrooms to organize the class units.
      * 
      */
     @JsonProperty("classRooms")

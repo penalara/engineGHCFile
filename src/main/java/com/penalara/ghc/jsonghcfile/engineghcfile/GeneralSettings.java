@@ -53,7 +53,7 @@ public class GeneralSettings {
      */
     @JsonProperty("avoidGapsBetweenSesions")
     @JsonPropertyDescription("It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.")
-    private Boolean avoidGapsBetweenSesions;
+    private Boolean avoidGapsBetweenSesions = true;
     /**
      * MaxContinuousTeaching
      * <p>
@@ -64,12 +64,14 @@ public class GeneralSettings {
     @JsonPropertyDescription("It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.")
     private MaxContinuousTeaching maxContinuousTeaching;
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    @JsonPropertyDescription("It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.")
-    private Boolean avoidClassesAroundBreak = false;
+    @JsonPropertyDescription("Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionType avoidClassesAroundBreak;
     /**
      * FreeTimes
      * <p>
@@ -210,20 +212,24 @@ public class GeneralSettings {
     }
 
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    public Boolean getAvoidClassesAroundBreak() {
+    public ConditionType getAvoidClassesAroundBreak() {
         return avoidClassesAroundBreak;
     }
 
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    public void setAvoidClassesAroundBreak(Boolean avoidClassesAroundBreak) {
+    public void setAvoidClassesAroundBreak(ConditionType avoidClassesAroundBreak) {
         this.avoidClassesAroundBreak = avoidClassesAroundBreak;
     }
 

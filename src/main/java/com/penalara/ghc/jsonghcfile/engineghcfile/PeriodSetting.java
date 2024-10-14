@@ -31,12 +31,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PeriodSetting {
 
     /**
-     * Identifier of the period to which the settings affect.
+     * Identifier of the period to which the settings affect.
      * (Required)
      * 
      */
     @JsonProperty("refPeriod")
-    @JsonPropertyDescription("Identifier\u00a0of\u00a0the\u00a0period\u00a0to\u00a0which\u00a0the\u00a0settings\u00a0affect.")
+    @JsonPropertyDescription("Identifier of the period to which the settings affect.")
     private String refPeriod;
     /**
      * WeeklyStay
@@ -62,7 +62,7 @@ public class PeriodSetting {
      */
     @JsonProperty("avoidGapsBetweenSesions")
     @JsonPropertyDescription("It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.")
-    private Boolean avoidGapsBetweenSesions;
+    private Boolean avoidGapsBetweenSesions = true;
     /**
      * MaxContinuousTeaching
      * <p>
@@ -73,12 +73,14 @@ public class PeriodSetting {
     @JsonPropertyDescription("It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.")
     private MaxContinuousTeaching maxContinuousTeaching;
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    @JsonPropertyDescription("It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.")
-    private Boolean avoidClassesAroundBreak = false;
+    @JsonPropertyDescription("Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionType avoidClassesAroundBreak;
     /**
      * FreeTimes
      * <p>
@@ -135,7 +137,7 @@ public class PeriodSetting {
     private DailyBuildingTransfers dailyBuildingTransfers;
 
     /**
-     * Identifier of the period to which the settings affect.
+     * Identifier of the period to which the settings affect.
      * (Required)
      * 
      */
@@ -145,7 +147,7 @@ public class PeriodSetting {
     }
 
     /**
-     * Identifier of the period to which the settings affect.
+     * Identifier of the period to which the settings affect.
      * (Required)
      * 
      */
@@ -239,20 +241,24 @@ public class PeriodSetting {
     }
 
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    public Boolean getAvoidClassesAroundBreak() {
+    public ConditionType getAvoidClassesAroundBreak() {
         return avoidClassesAroundBreak;
     }
 
     /**
-     * It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("avoidClassesAroundBreak")
-    public void setAvoidClassesAroundBreak(Boolean avoidClassesAroundBreak) {
+    public void setAvoidClassesAroundBreak(ConditionType avoidClassesAroundBreak) {
         this.avoidClassesAroundBreak = avoidClassesAroundBreak;
     }
 

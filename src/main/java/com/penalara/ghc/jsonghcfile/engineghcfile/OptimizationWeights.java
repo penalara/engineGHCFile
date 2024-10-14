@@ -25,20 +25,20 @@ public class OptimizationWeights {
     /**
      * TimetableGaps
      * <p>
-     * It contains options related to timetable-gaps weights.
+     * It contains options related to timetable-gaps weights.
      * 
      */
     @JsonProperty("timetableGaps")
-    @JsonPropertyDescription("It contains\u00a0options\u00a0related\u00a0to\u00a0timetable-gaps\u00a0weights.")
+    @JsonPropertyDescription("It contains options related to timetable-gaps weights.")
     private TimetableGaps timetableGaps;
     /**
      * NonPreferredPositionsOptimization
      * <p>
-     * It contains options related to allocation in non-preferred sections.
+     * It contains options related to allocation in non-preferred sections.
      * 
      */
     @JsonProperty("nonPreferredPositions")
-    @JsonPropertyDescription("It contains\u00a0options\u00a0related\u00a0to\u00a0allocation\u00a0in\u00a0non-preferred\u00a0sections.")
+    @JsonPropertyDescription("It contains options related to allocation in non-preferred sections.")
     private NonPreferredPositionsOptimization nonPreferredPositions;
     /**
      * SessionsOptimization
@@ -62,7 +62,7 @@ public class OptimizationWeights {
     /**
      * TimetableGaps
      * <p>
-     * It contains options related to timetable-gaps weights.
+     * It contains options related to timetable-gaps weights.
      * 
      */
     @JsonProperty("timetableGaps")
@@ -73,7 +73,7 @@ public class OptimizationWeights {
     /**
      * TimetableGaps
      * <p>
-     * It contains options related to timetable-gaps weights.
+     * It contains options related to timetable-gaps weights.
      * 
      */
     @JsonProperty("timetableGaps")
@@ -84,7 +84,7 @@ public class OptimizationWeights {
     /**
      * NonPreferredPositionsOptimization
      * <p>
-     * It contains options related to allocation in non-preferred sections.
+     * It contains options related to allocation in non-preferred sections.
      * 
      */
     @JsonProperty("nonPreferredPositions")
@@ -95,7 +95,7 @@ public class OptimizationWeights {
     /**
      * NonPreferredPositionsOptimization
      * <p>
-     * It contains options related to allocation in non-preferred sections.
+     * It contains options related to allocation in non-preferred sections.
      * 
      */
     @JsonProperty("nonPreferredPositions")
