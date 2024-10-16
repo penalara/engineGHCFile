@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * WeeklyVariable
+ * VariableTiming
  * <p>
- * It defines the distribution as a number of sections per week and a maximum range of sections per day.
+ * It defines the allocating time as a total of time, maximum and minimun range of sections per day.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,15 +22,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "avoidMinDuration",
     "allowDiscontinuity"
 })
-public class WeeklyVariable {
+public class VariableTiming {
 
     /**
-     * Total of session's weekly minutes.
+     * Total of session's minutes.
      * (Required)
      * 
      */
     @JsonProperty("minutesAmount")
-    @JsonPropertyDescription("Total of session's weekly minutes.")
+    @JsonPropertyDescription("Total of session's minutes.")
     private Integer minutesAmount;
     /**
      * Maximum of minutes per day.
@@ -70,7 +70,7 @@ public class WeeklyVariable {
     private Boolean allowDiscontinuity = false;
 
     /**
-     * Total of session's weekly minutes.
+     * Total of session's minutes.
      * (Required)
      * 
      */
@@ -80,7 +80,7 @@ public class WeeklyVariable {
     }
 
     /**
-     * Total of session's weekly minutes.
+     * Total of session's minutes.
      * (Required)
      * 
      */

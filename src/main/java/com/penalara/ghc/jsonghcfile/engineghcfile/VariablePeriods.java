@@ -10,24 +10,26 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * VariablePeriods
  * <p>
- * The total of the class units of the distribution are divided between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
+ * The total of the class units of the distribution are allocation between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "totalTime",
+    "timing",
     "maximunTimeInPeriod",
     "minimnunTimeInPeriod"
 })
 public class VariablePeriods {
 
     /**
-     * Total number of minutes must asigned the sesion
+     * TimeAllocation
+     * <p>
+     * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
      * 
      */
-    @JsonProperty("totalTime")
-    @JsonPropertyDescription("Total number of minutes must asigned the sesion")
-    private Integer totalTime = 0;
+    @JsonProperty("timing")
+    @JsonPropertyDescription("Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.")
+    private TimeAllocation timing;
     /**
      * Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
      * 
@@ -44,21 +46,25 @@ public class VariablePeriods {
     private Integer minimnunTimeInPeriod = 0;
 
     /**
-     * Total number of minutes must asigned the sesion
+     * TimeAllocation
+     * <p>
+     * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
      * 
      */
-    @JsonProperty("totalTime")
-    public Integer getTotalTime() {
-        return totalTime;
+    @JsonProperty("timing")
+    public TimeAllocation getTiming() {
+        return timing;
     }
 
     /**
-     * Total number of minutes must asigned the sesion
+     * TimeAllocation
+     * <p>
+     * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
      * 
      */
-    @JsonProperty("totalTime")
-    public void setTotalTime(Integer totalTime) {
-        this.totalTime = totalTime;
+    @JsonProperty("timing")
+    public void setTiming(TimeAllocation timing) {
+        this.timing = timing;
     }
 
     /**

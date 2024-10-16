@@ -2,7 +2,12 @@
 package com.penalara.ghc.jsonghcfile.engineghcfile;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -10,18 +15,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * StablePeriods
+ * TimeAllocation
  * <p>
- * The allocation of the class unit of the session is the same in each period.Only one property must be specified.
+ * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "stableTiming",
-    "variableTiming",
-    "stableTimingList"
+    "variableTiming"
 })
-public class StablePeriods {
+public class TimeAllocation {
 
     /**
      * StableTiming
@@ -41,15 +45,8 @@ public class StablePeriods {
     @JsonProperty("variableTiming")
     @JsonPropertyDescription("It defines the allocating time as a total of time, maximum and minimun range of sections per day.")
     private VariableTiming variableTiming;
-    /**
-     * StableTimingList
-     * <p>
-     * It contains an array of 'StableTiming' distributions.
-     * 
-     */
-    @JsonProperty("stableTimingList")
-    @JsonPropertyDescription("It contains an array of 'StableTiming' distributions.")
-    private List<List<Integer>> stableTimingList = new ArrayList<List<Integer>>();
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
      * StableTiming
@@ -95,26 +92,14 @@ public class StablePeriods {
         this.variableTiming = variableTiming;
     }
 
-    /**
-     * StableTimingList
-     * <p>
-     * It contains an array of 'StableTiming' distributions.
-     * 
-     */
-    @JsonProperty("stableTimingList")
-    public List<List<Integer>> getStableTimingList() {
-        return stableTimingList;
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
     }
 
-    /**
-     * StableTimingList
-     * <p>
-     * It contains an array of 'StableTiming' distributions.
-     * 
-     */
-    @JsonProperty("stableTimingList")
-    public void setStableTimingList(List<List<Integer>> stableTimingList) {
-        this.stableTimingList = stableTimingList;
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }

@@ -35,20 +35,20 @@ public class Distribution {
     /**
      * StablePeriods
      * <p>
-     * The distribution of the class unit of the session is the same in each period.Only one property must be specified.
+     * The allocation of the class unit of the session is the same in each period.Only one property must be specified.
      * 
      */
     @JsonProperty("stablePeriods")
-    @JsonPropertyDescription("The distribution of the class unit of the session is the same in each period.")
+    @JsonPropertyDescription("The allocation of the class unit of the session is the same in each period.")
     private StablePeriods stablePeriods;
     /**
      * VariablePeriods
      * <p>
-     * The total of the class units of the distribution are divided between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
+     * The total of the class units of the distribution are allocation between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
      * 
      */
     @JsonProperty("variablePeriods")
-    @JsonPropertyDescription("The total of the class units of the distribution are divided between the periods.")
+    @JsonPropertyDescription("The total of the class units of the distribution are allocation between the periods.")
     private VariablePeriods variablePeriods;
 
     /**
@@ -76,7 +76,7 @@ public class Distribution {
     /**
      * StablePeriods
      * <p>
-     * The distribution of the class unit of the session is the same in each period.Only one property must be specified.
+     * The allocation of the class unit of the session is the same in each period.Only one property must be specified.
      * 
      */
     @JsonProperty("stablePeriods")
@@ -87,7 +87,7 @@ public class Distribution {
     /**
      * StablePeriods
      * <p>
-     * The distribution of the class unit of the session is the same in each period.Only one property must be specified.
+     * The allocation of the class unit of the session is the same in each period.Only one property must be specified.
      * 
      */
     @JsonProperty("stablePeriods")
@@ -98,7 +98,7 @@ public class Distribution {
     /**
      * VariablePeriods
      * <p>
-     * The total of the class units of the distribution are divided between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
+     * The total of the class units of the distribution are allocation between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
      * 
      */
     @JsonProperty("variablePeriods")
@@ -109,7 +109,7 @@ public class Distribution {
     /**
      * VariablePeriods
      * <p>
-     * The total of the class units of the distribution are divided between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
+     * The total of the class units of the distribution are allocation between the periods.Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.
      * 
      */
     @JsonProperty("variablePeriods")
