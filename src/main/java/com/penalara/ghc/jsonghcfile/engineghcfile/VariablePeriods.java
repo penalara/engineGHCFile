@@ -25,6 +25,7 @@ public class VariablePeriods {
      * TimeAllocation
      * <p>
      * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
+     * (Required)
      * 
      */
     @JsonProperty("timing")
@@ -49,6 +50,7 @@ public class VariablePeriods {
      * TimeAllocation
      * <p>
      * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
+     * (Required)
      * 
      */
     @JsonProperty("timing")
@@ -60,6 +62,7 @@ public class VariablePeriods {
      * TimeAllocation
      * <p>
      * Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.Only one property must be specified.
+     * (Required)
      * 
      */
     @JsonProperty("timing")

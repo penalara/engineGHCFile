@@ -72,12 +72,14 @@ public class Group {
     @JsonPropertyDescription("Stric number of free afternoons for the group.")
     private Integer freeAfternoons;
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("notGaps")
-    @JsonPropertyDescription("It indicates if the group can have gaps in its timetable.")
-    private Boolean notGaps;
+    @JsonPropertyDescription("Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.")
+    private ConditionType notGaps;
     /**
      * This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.
      * 
@@ -187,20 +189,24 @@ public class Group {
     }
 
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("notGaps")
-    public Boolean getNotGaps() {
+    public ConditionType getNotGaps() {
         return notGaps;
     }
 
     /**
-     * It indicates if the group can have gaps in its timetable.
+     * ConditionType
+     * <p>
+     * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
      * 
      */
     @JsonProperty("notGaps")
-    public void setNotGaps(Boolean notGaps) {
+    public void setNotGaps(ConditionType notGaps) {
         this.notGaps = notGaps;
     }
 
