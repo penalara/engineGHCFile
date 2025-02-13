@@ -19,6 +19,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "day",
     "realIndex",
     "fictionalIndex",
+    "startTime",
+    "endTime",
     "assignment"
 })
 public class AssignedSection {
@@ -55,6 +57,20 @@ public class AssignedSection {
     @JsonProperty("fictionalIndex")
     @JsonPropertyDescription("Position on the day, of the fictional section, in the frame.")
     private Integer fictionalIndex;
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("startTime")
+    @JsonPropertyDescription("Start time of the section with a fictional index where sessions are assigned")
+    private String startTime;
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("endTime")
+    @JsonPropertyDescription("Start time of the section with a fictional index where sessions are assigned")
+    private String endTime;
     /**
      * Assignment
      * <p>
@@ -144,6 +160,42 @@ public class AssignedSection {
     @JsonProperty("fictionalIndex")
     public void setFictionalIndex(Integer fictionalIndex) {
         this.fictionalIndex = fictionalIndex;
+    }
+
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("startTime")
+    public String getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("startTime")
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("endTime")
+    public String getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * Start time of the section with a fictional index where sessions are assigned
+     * 
+     */
+    @JsonProperty("endTime")
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     /**
